@@ -3,7 +3,7 @@ interface Props {
     subtitle: string;
 }
 
-export const Seo = ({ title, subtitle }: { title: string; subtitle: string }) => {
+export const Title = ({ title, subtitle }: { title: string; subtitle: string }) => {
     return (
         <main className="min-h-screen flex flex-col items-center justify-center">
             <h1 className="text-4xl font-bold">{title}</h1>
