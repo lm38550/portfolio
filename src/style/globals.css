@@ -1,11 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
 
-@import "tailwindcss/preflight";
-@import "tailwindcss/utilities";
+@import "tailwindcss";
 
-/* Ensuite seulement tes styles */
+:root {
+    --background: #F7F9FF;
+    --foreground: #1F2D5C;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-sans: "Google sans", system-ui;
+    --font-mono: "Google sans", system-ui;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #11131F;
+        --foreground: #D6E1FF;
+    }
+}
 
 body {
-    font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+}
+
+#h1 {
+    font-size: 70px;
 }
