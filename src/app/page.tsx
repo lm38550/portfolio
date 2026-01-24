@@ -7,7 +7,6 @@ export default function Home() {
   return (
       <>
           <Title title="Louis Morel" subtitle="Étudiant en informatique – Développement web & projets perso" />
-          <Title title="Tenzing Bernard" subtitle="Étudiant en DnMADE – Projets étduant & perso" />
           <Typography variant="h1" component="h1">
               Text
           </Typography>
