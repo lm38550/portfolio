@@ -1,23 +1,22 @@
-@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
-
 @import "tailwindcss";
+@config "../../tailwind.config.js";
 
 :root {
-    --background: #F7F9FF;
-    --foreground: #1F2D5C;
+    --background: theme(colors.day.100);
+    --foreground: theme(colors.day.DEFAULT);
 }
 
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);
-    --font-sans: "Google sans", system-ui;
-    --font-mono: "Google sans", system-ui;
+    --font-sans: var(--font-k2d), system-ui;
+    --font-mono: var(--font-k2d), system-ui;
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --background: #11131F;
-        --foreground: #D6E1FF;
+        --background: theme(colors.night.100);
+        --foreground: theme(colors.night.DEFAULT);
     }
 }
 
@@ -25,8 +24,4 @@ body {
     background: var(--background);
     color: var(--foreground);
     font-family: var(--font-sans);
-}
-
-#h1 {
-    font-size: 70px;
 }

@@ -8,21 +8,15 @@ interface Props {
         | "h3"
         | "h4"
         | "h5"
-        | "display"
-        | "lead"
         | "body-lg"
         | "body-base"
-        | "body-sm"
-        | "caption1"
-        | "caption2"
-        | "caption3"
-        | "caption4";
+        | "body-sm";
     component?: "h1" | "h2" | "h3" | "h4" | "h5" | "div" | "p" | "span"
     children: React.ReactNode;
 }
 
 export const Typography = ({
-    variant = "body-sm",
+    variant = "body-base",
     component: Component = "p",
     children
 }: Props) => {
@@ -31,10 +25,28 @@ export const Typography = ({
 
     switch (variant) {
         case "h1":
-            variantStyle = "text-red-500";
+            variantStyle = "text-5xl text-day-800 dark:text-night-800";
             break;
         case "h2":
-            variantStyle = "h2";
+            variantStyle = "text-4xl";
+            break;
+        case "h3":
+            variantStyle = "text-3xl";
+            break;
+        case "h4":
+            variantStyle = "text-2xl";
+            break;
+        case "h5":
+            variantStyle = "text-xl";
+            break;
+        case "body-lg":
+            variantStyle = "text-lg";
+            break;
+        case "body-base":
+            variantStyle = "text-base";
+            break;
+        case "body-sm":
+            variantStyle = "text-sm";
             break;
     }
 
