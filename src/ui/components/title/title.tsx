@@ -16,8 +16,9 @@ export const Title = ({ name, img }: Props) => {
                     <Typography variant="body-lg" component="h2">Développement web & projets perso</Typography>
                 </div>
             </div>
-            <div className="flex justify-end">
-                <Image src={img} alt="profile" width={500} height={500} />
+            <div className="flex justify-end relative w-[700px] h-[700px]">
+                <Image src={img} alt="profile" fill className="object-cover"/>
+                <div className="absolute inset-0 bg-gradient-to-t from-day-100 dark:from-night-100 via-transparent to-transparent"></div>
             </div>
         </main>
     );

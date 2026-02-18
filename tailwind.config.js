@@ -7,28 +7,29 @@ module.exports = {
         "./src/**/*.{ts,js,jsx,tsx}",
     ],
     theme: {
-        extend: {},
-        colors: {
-            night: {
-                100: '#11131F',
-                200: '#182449',
-                300: '#253974',
-                400: '#3A4F97',
-                500: '#3E63DD',
-                600: '#5472E4',
-                DEFAULT: '#9EB1FF',
-                800: '#D6E1FF',
+        extend: {
+            colors: {
+                night: {
+                    100: '#11131F',
+                    200: '#182449',
+                    300: '#253974',
+                    400: '#3A4F97',
+                    500: '#3E63DD',
+                    600: '#5472E4',
+                    DEFAULT: '#9EB1FF',
+                    800: '#D6E1FF',
+                },
+                day: {
+                    100: '#FDFDFE',
+                    200: '#EDF2FE',
+                    300: '#D2DEFF',
+                    400: '#ABBDF9',
+                    500: '#3E63DD',
+                    600: '#3358D4',
+                    DEFAULT: '#3A5BC7',
+                    800: '#1F2D5C',
+                }
             },
-            day: {
-                100: '#FDFDFE',
-                200: '#EDF2FE',
-                300: '#D2DEFF',
-                400: '#ABBDF9',
-                500: '#3E63DD',
-                600: '#3358D4',
-                DEFAULT: '#3A5BC7',
-                800: '#1F2D5C',
-            }
         },
         fontSize: {
             "debug" : "200px",
