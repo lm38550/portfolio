@@ -1,19 +1,24 @@
+import Image from "next/image";
+import {Typography} from "@/ui/design-system/typography/typography";
+
 interface Props {
-    title: string;
-    subtitle: string;
+    name: string;
+    img: string;
 }
 
-export const Title = ({ title, subtitle }: { title: string; subtitle: string }) => {
+export const Title = ({ name, img }: Props) => {
     return (
-        <main className="min-h-screen flex flex-col items-center justify-center">
-            <h1 className="text-5xl text-day-800 dark:text-night-800">{title}</h1>
-            <p className="text-4xl text-day-800 dark:text-night-800">{subtitle}</p>
-            <p className="text-3xl text-day-800 dark:text-night-800">{subtitle}</p>
-            <p className="text-2xl text-day-800 dark:text-night-800">{subtitle}</p>
-            <p className="text-xl text-day-800 dark:text-night-800">{subtitle}</p>
-            <p className="text-lg text-day-800 dark:text-night-800">{subtitle}</p>
-            <p className="text-base text-day-800 dark:text-night-800">{subtitle}</p>
-            <p className="text-sm text-day-800 dark:text-night-800">{subtitle}</p>
+        <main className="min-h-screen flex items-center justify-between">
+            <div className="flex flex-col items-start justify-center space-y-4 px-10">
+                <Typography variant="h1" component="h1">{name}</Typography>
+                <div className="px-10">
+                    <Typography variant="body-lg" component="h2">Étudiant en informatique</Typography>
+                    <Typography variant="body-lg" component="h2">Développement web & projets perso</Typography>
+                </div>
+            </div>
+            <div className="flex justify-end">
+                <Image src={img} alt="profile" width={500} height={500} />
+            </div>
         </main>
     );
 };
