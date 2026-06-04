@@ -10,7 +10,7 @@ const k2d = K2D({
 })
 
 export const metadata: Metadata = {
-    title: "Louis Morel",
+    title: "Louis Morel - Étudiant en informatique",
     description: "Portfolio de Louis Morel - Étudiant en informatique",
 };
 

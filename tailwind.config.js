@@ -7,6 +7,10 @@ module.exports = {
         "./src/**/*.{ts,js,jsx,tsx}",
     ],
     theme: {
+        borderRadius: {
+            DEFAULT : "10px",
+            full : "9999px",
+        },
         extend: {
             colors: {
                 night: {
@@ -17,6 +21,7 @@ module.exports = {
                     500: '#3E63DD',
                     600: '#5472E4',
                     DEFAULT: '#9EB1FF',
+                    750: '#BAC9FF',
                     800: '#D6E1FF',
                 },
                 day: {
@@ -97,8 +102,7 @@ module.exports = {
                     fontWeight: 400,
                 }
             ],
-
-        }
+        },
     },
     plugins: [],
 }
