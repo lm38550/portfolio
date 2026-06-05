@@ -89,7 +89,15 @@ export const Button = ({
                 {icon && variant === "ico" ? React.cloneElement(
                         icon , {size: 6}
                 ) : (
-                        <>{children}</>
+                        <div className={clsx("flex items-center gap-1")}>
+                            {icon && iconPosition === "left" && (
+                                React.cloneElement(icon , {size: 6})
+                            )}
+                            {children}
+                            {icon && iconPosition === "right" && (
+                                React.cloneElement(icon , {size: 6})
+                            )}
+                        </div>
                 )}
             </button>
         </>
