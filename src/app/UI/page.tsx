@@ -1,6 +1,7 @@
 import "@/style/globals.css"
 import {Button} from "@/ui/design-system/button/button";
 import {RiUser6Fill, RiArrowRightLine, RiArrowLeftLine} from "react-icons/ri"
+import {Spinner} from "@/ui/design-system/spinner/spinner";
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
                 <Button className="m-2" size="large" variant="ico" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="large" variant="ico" iconTheme="secondary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="large" variant="ico" iconTheme="gray" icon={<RiUser6Fill/>}>Test</Button>
+                <Spinner size="large"/>
             </div>
 
             <div className="flex p-5">
@@ -32,6 +34,7 @@ export default function Home() {
                 <Button className="m-2" variant="ico" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" variant="ico" iconTheme="secondary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" variant="ico" iconTheme="gray" icon={<RiUser6Fill/>}>Test</Button>
+                <Spinner/>
             </div>
 
             <div className="flex p-5">
@@ -50,6 +53,7 @@ export default function Home() {
                 <Button className="m-2" size="small" variant="ico" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="small" variant="ico" iconTheme="secondary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="small" variant="ico" iconTheme="gray" icon={<RiUser6Fill/>}>Test</Button>
+                <Spinner size="small"/>
             </div>
 
             <div className="flex p-5">
