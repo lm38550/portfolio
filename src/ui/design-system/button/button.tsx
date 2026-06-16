@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import React from "react";
+import {Spinner} from "@/ui/design-system/spinner/spinner";
 
 interface Props {
     size?: "small" | "medium" | "large";
@@ -19,7 +20,7 @@ export const Button = ({
     size = "medium",
     variant = "primary",
     icon,
-    iconTheme = "primary",
+    iconTheme,
     iconPosition = "right",
     disabled,
     isLoading,
@@ -39,10 +40,10 @@ export const Button = ({
             variantStyles = "bg-day-300 dark:bg-night-500 hover:bg-day-200 hover:dark:bg-night-600 text-day-800 dark:text-night-800 dark:border-night-500 border-day-300 border-solid border-1 rounded";
             break;
         case "outline":
-            variantStyles = "bg-day-100 dark:bg-night-100 hover:bg-gray-900/5 hover:dark:bg-gray-100/5 border-gray-500 border-solid border-1 rounded text-gray-900 dark:text-gray-100";
+            variantStyles = "bg-day-100 dark:bg-night-100 hover:bg-gray-900/5 hover:dark:bg-gray-100/5 border-gray-300 border-solid border-1 rounded text-gray-900 dark:text-gray-100";
             break;
         case "disabled":
-            variantStyles = "bg-gray-400/20 dark:bg-gray-100/10 border-gray-500 border-solid border-1 rounded text-gray-500 dark:text-gray-500 cursor-not-allowed";
+            variantStyles = "bg-gray-400/20 dark:bg-gray-100/10 border-gray-300 border-solid border-1 rounded text-gray-500 dark:text-gray-500 cursor-not-allowed";
             break;
         case "ico":
             if (iconTheme === "primary") {
@@ -52,7 +53,7 @@ export const Button = ({
                 variantStyles = "bg-day-300 dark:bg-night-500 hover:bg-day-200 hover:dark:bg-night-600 text-day-800 dark:text-night-800 rounded-full"
             }
             if (iconTheme === "gray") {
-                variantStyles = "bg-day-100 dark:bg-night-100 hover:bg-gray-900/5 hover:dark:bg-gray-100/5 border-gray-500 border-solid border-1 rounded-full text-gray-900 dark:text-gray-100";
+                variantStyles = "bg-day-100 dark:bg-night-100 hover:bg-gray-900/5 hover:dark:bg-gray-100/5 border-gray-300 border-solid border-1 rounded-full text-gray-900 dark:text-gray-100";
             }
             break;
     }
@@ -82,23 +83,35 @@ export const Button = ({
         <>
             <button
                 type="button"
-                className={clsx(variantStyles, sizeStyles, className, icoSize)}
+                className={clsx(variantStyles, sizeStyles, className, icoSize, isLoading && "cursor-wait", "relative")}
                 onClick={() => console.log("click")}
                 disabled={disabled}
             >
-                {icon && variant === "ico" ? React.cloneElement(
-                        icon , {size: 6}
-                ) : (
-                        <div className={clsx("flex items-center gap-1")}>
-                            {icon && iconPosition === "left" && (
-                                React.cloneElement(icon , {size: 6})
-                            )}
-                            {children}
-                            {icon && iconPosition === "right" && (
-                                React.cloneElement(icon , {size: 6})
-                            )}
-                        </div>
+                {isLoading && (
+                    <div className="absolute inset-0 flex items-center justify-center">
+                        {(variant === "primary" || iconTheme === "primary") ? (
+                            <Spinner size="small" variant="outline" />
+                        ) : (
+                            <Spinner size="small"/>
+                        )}
+                    </div>
                 )}
+
+                <div className={clsx(isLoading && "invisible")}>
+                    {icon && variant === "ico" ? React.cloneElement(
+                            icon , {size: 6}
+                    ) : (
+                            <div className={clsx("flex items-center gap-1")}>
+                                {icon && iconPosition === "left" && (
+                                    React.cloneElement(icon , {size: 6})
+                                )}
+                                {children}
+                                {icon && iconPosition === "right" && (
+                                    React.cloneElement(icon , {size: 6})
+                                )}
+                            </div>
+                    )}
+                </div>
             </button>
         </>
     )

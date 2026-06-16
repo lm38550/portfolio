@@ -12,7 +12,7 @@ export default function Home() {
                 <Button className="m-2" size="large" variant="secondary">Secondary</Button>
                 <Button className="m-2" size="large" variant="outline">Outline</Button>
                 <Button className="m-2" size="large" variant="disabled">Disabled</Button>
-                <Button className="m-2" size="large" variant="ico" icon={<RiUser6Fill/>}>Test</Button>
+                <Button className="m-2" size="large" variant="ico" iconTheme="primary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="large" variant="ico" iconTheme="secondary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="large" variant="ico" iconTheme="gray" icon={<RiUser6Fill/>}>Test</Button>
                 <Spinner size="large"/>
@@ -31,7 +31,7 @@ export default function Home() {
                 <Button className="m-2" variant="secondary">Secondary</Button>
                 <Button className="m-2" variant="outline">Outline</Button>
                 <Button className="m-2" variant="disabled">Disabled</Button>
-                <Button className="m-2" variant="ico" icon={<RiUser6Fill/>}>Test</Button>
+                <Button className="m-2" variant="ico" iconTheme="primary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" variant="ico" iconTheme="secondary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" variant="ico" iconTheme="gray" icon={<RiUser6Fill/>}>Test</Button>
                 <Spinner/>
@@ -50,10 +50,20 @@ export default function Home() {
                 <Button className="m-2" size="small" variant="secondary">Secondary</Button>
                 <Button className="m-2" size="small" variant="outline">Outline</Button>
                 <Button className="m-2" size="small" variant="disabled">Disabled</Button>
-                <Button className="m-2" size="small" variant="ico" icon={<RiUser6Fill/>}>Test</Button>
+                <Button className="m-2" size="small" variant="ico" iconTheme="primary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="small" variant="ico" iconTheme="secondary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="small" variant="ico" iconTheme="gray" icon={<RiUser6Fill/>}>Test</Button>
                 <Spinner size="small"/>
+            </div>
+
+            <div className="flex p-5">
+                <Button isLoading className="m-2" size="small">Primary</Button>
+                <Button isLoading className="m-2" size="small" variant="secondary">Secondary</Button>
+                <Button isLoading className="m-2" size="small" variant="outline">Outline</Button>
+                <Button isLoading className="m-2" size="small" variant="disabled">Disabled</Button>
+                <Button isLoading className="m-2" size="small" variant="ico" iconTheme="primary" icon={<RiUser6Fill/>}>Test</Button>
+                <Button isLoading className="m-2" size="small" variant="ico" iconTheme="secondary" icon={<RiUser6Fill/>}>Test</Button>
+                <Button isLoading className="m-2" size="small" variant="ico" iconTheme="gray" icon={<RiUser6Fill/>}>Test</Button>
             </div>
 
             <div className="flex p-5">

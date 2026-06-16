@@ -22,10 +22,10 @@ export const Spinner = ({size = "medium", variant = "primary"}: Props) => {
 
     switch (variant) {
         case "primary":
-            variantStyles = "text-primary";
+            variantStyles = "text-day dark:text-night";
             break;
         case "outline":
-            variantStyles = "text-white";
+            variantStyles = "text-white dark:text-black";
             break;
     }
 
