@@ -25,3 +25,11 @@ body {
     color: var(--foreground);
     font-family: var(--font-sans);
 }
+
+a:hover {
+    @apply text-day dark:text-night;
+}
+
+.animate, a, a:hover {
+    transition: all 0.2s ease-in-out;
+}
