@@ -8,7 +8,7 @@ export const Logo = ({size = "medium"}: Props) => {
     let sizeLogo;
     let colorLogo;
 
-    colorLogo = "text-day dark:text-night";
+    colorLogo = "text-day-800 dark:text-night-800";
 
     switch (size) {
         case "very-small":
