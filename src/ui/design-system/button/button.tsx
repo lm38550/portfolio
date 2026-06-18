@@ -17,16 +17,16 @@ interface Props {
 }
 
 export const Button = ({
-    size = "medium",
-    variant = "primary",
-    icon,
-    iconTheme,
-    iconPosition = "right",
-    disabled,
-    isLoading,
-    children,
-    className,
-}: Props) => {
+                           size = "medium",
+                           variant = "primary",
+                           icon,
+                           iconTheme,
+                           iconPosition = "right",
+                           disabled,
+                           isLoading,
+                           children,
+                           className,
+                       }: Props) => {
 
     let variantStyles: string = "",
         sizeStyles: string = "",
@@ -63,56 +63,54 @@ export const Button = ({
             sizeStyles = `text-sm ${
                 variant === "ico" ? "flex items-center justify-center w-[37px] h-[37px]" : "px-3 py-2"
             }`;
-            icoSize = 13;
+            icoSize = 15;
             break;
         case "medium":
             sizeStyles = `text-base ${
                 variant === "ico" ? "flex items-center justify-center w-[56px] h-[56px]" : "px-5 py-3"
             }`;
-            icoSize = 16;
+            icoSize = 22;
             break;
         case "large":
             sizeStyles = `text-lg ${
                 variant === "ico" ? "flex items-center justify-center w-[74px] h-[74px]" : "px-7 py-4"
             }`;
-            icoSize = 20;
+            icoSize = 32;
             break;
     }
 
     return (
-        <>
-            <button
-                type="button"
-                className={clsx(variantStyles, sizeStyles, className, icoSize, isLoading && "cursor-wait", "relative")}
-                onClick={() => console.log("click")}
-                disabled={disabled}
-            >
-                {isLoading && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        {(variant === "primary" || iconTheme === "primary") ? (
-                            <Spinner size="small" variant="outline" />
-                        ) : (
-                            <Spinner size="small"/>
+        <button
+            type="button"
+            className={clsx(variantStyles, sizeStyles, className, isLoading && "cursor-wait", "relative")}
+            onClick={() => console.log("click")}
+            disabled={disabled}
+        >
+            {isLoading && (
+                <div className="absolute inset-0 flex items-center justify-center">
+                    {(variant === "primary" || iconTheme === "primary") ? (
+                        <Spinner size="small" variant="outline"/>
+                    ) : (
+                        <Spinner size="small"/>
+                    )}
+                </div>
+            )}
+
+            <div className={clsx(isLoading && "invisible")}>
+                {icon && variant === "ico" ? React.cloneElement(
+                    icon, {size: icoSize}
+                ) : (
+                    <div className={clsx("flex items-center gap-1")}>
+                        {icon && iconPosition === "left" && (
+                            React.cloneElement(icon, {size: icoSize})
+                        )}
+                        {children}
+                        {icon && iconPosition === "right" && (
+                            React.cloneElement(icon, {size: icoSize})
                         )}
                     </div>
                 )}
-
-                <div className={clsx(isLoading && "invisible")}>
-                    {icon && variant === "ico" ? React.cloneElement(
-                            icon , {size: 6}
-                    ) : (
-                            <div className={clsx("flex items-center gap-1")}>
-                                {icon && iconPosition === "left" && (
-                                    React.cloneElement(icon , {size: 6})
-                                )}
-                                {children}
-                                {icon && iconPosition === "right" && (
-                                    React.cloneElement(icon , {size: 6})
-                                )}
-                            </div>
-                    )}
-                </div>
-            </button>
-        </>
+            </div>
+        </button>
     )
 }

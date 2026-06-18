@@ -1,18 +1,25 @@
+"use client";
+
 import "@/style/globals.css"
 import {Button} from "@/ui/design-system/button/button";
 import {RiUser6Fill, RiArrowRightLine, RiArrowLeftLine} from "react-icons/ri"
 import {Spinner} from "@/ui/design-system/spinner/spinner";
 import {Logo} from "@/ui/design-system/logo/logo";
+import {Container} from "@/ui/components/container/container";
 
 
 export default function Home() {
+    console.log({ Button, Spinner, Logo, Container });
     return (
-        <>
+        <Container>
             <div className="flex p-5">
                 <Button className="m-2" size="large">Primary</Button>
                 <Button className="m-2" size="large" variant="secondary">Secondary</Button>
                 <Button className="m-2" size="large" variant="outline">Outline</Button>
                 <Button className="m-2" size="large" variant="disabled">Disabled</Button>
+            </div>
+
+            <div className="flex p-5">
                 <Button className="m-2" size="large" variant="ico" iconTheme="primary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="large" variant="ico" iconTheme="secondary" icon={<RiUser6Fill/>}>Test</Button>
                 <Button className="m-2" size="large" variant="ico" iconTheme="gray" icon={<RiUser6Fill/>}>Test</Button>
@@ -81,6 +88,6 @@ export default function Home() {
                 <Logo/>
                 <Logo size="large"/>
             </div>
-        </>
+        </Container>
     )
 }
