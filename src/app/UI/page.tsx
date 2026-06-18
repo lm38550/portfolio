@@ -2,6 +2,7 @@ import "@/style/globals.css"
 import {Button} from "@/ui/design-system/button/button";
 import {RiUser6Fill, RiArrowRightLine, RiArrowLeftLine} from "react-icons/ri"
 import {Spinner} from "@/ui/design-system/spinner/spinner";
+import {Logo} from "@/ui/design-system/logo/logo";
 
 
 export default function Home() {
@@ -72,6 +73,13 @@ export default function Home() {
                 <Button className="m-2" size="small" variant="secondary" icon={<RiArrowRightLine/>}>Ico sec</Button>
                 <Button className="m-2" size="small" variant="outline" icon={<RiArrowRightLine/>}>Ico out</Button>
                 <Button className="m-2" size="small" variant="disabled" icon={<RiArrowRightLine/>}>Ico dis</Button>
+            </div>
+
+            <div className="flex p-5 items-center">
+                <Logo size="very-small"/>
+                <Logo size="small"/>
+                <Logo/>
+                <Logo size="large"/>
             </div>
         </>
     )
