@@ -8,9 +8,7 @@ import {Footer} from "@/ui/components/navigation/footer";
 export default function Home() {
     return (
         <>
-            <Navigation/>
             <Title name="Louis Morel" img="/louis.png"/>
-            <Footer/>
         </>
     )
 }

@@ -16,7 +16,6 @@ export default function Home() {
     console.log({Button, Spinner, Logo, Container});
     return (
         <>
-            <Navigation/>
             <Container>
                 {/*---- TEXTES ----*/}
 
@@ -196,7 +195,6 @@ export default function Home() {
             </Container>
             <FooterVideo/>
             <br/>
-            <Footer/>
         </>
     )
 }
