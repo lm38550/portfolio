@@ -17,10 +17,6 @@ export const ActiveLink= ({ href, children }: Props) => {
         return pathname === href;
     }, [pathname, href])
 
-    console.log(pathname);
-    console.log(href);
-    console.log(isActive);
-
     return (
         <Link
             href={href}

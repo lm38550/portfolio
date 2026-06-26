@@ -11,7 +11,7 @@ interface Props {
 
 export const Navigation = ({}: Props) => {
     return (
-        <div className="border-b-2 border-day-300 dark:border-night-300">
+        <div className="bg-day-300 dark:bg-night-300">
             <Container className="flex items-center justify-between py-1.5 gap-7">
                 <Link href="/">
                     <div className="flex items-center py-3 gap-3">
@@ -37,7 +37,7 @@ export const Navigation = ({}: Props) => {
                             UI
                         </ActiveLink>
                     </Typography>
-                    <Button variant="ico" size="medium" iconTheme="secondary" icon={<RiMoonLine/>}></Button>
+                    <Button variant="ico" size="medium" iconTheme="primary" icon={<RiMoonLine/>}></Button>
                 </div>
             </Container>
         </div>

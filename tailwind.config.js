@@ -79,7 +79,7 @@ module.exports = {
                 }
             ],
             "lg": [
-                "2.5rem",
+                "2.3rem",
                 {
                     lineHeight: "1em",
                     letterSpacing: "0",
@@ -95,11 +95,35 @@ module.exports = {
                 }
             ],
             "sm": [
-                "1.2rem",
+                "1.5rem",
                 {
                     lineHeight: "1em",
                     letterSpacing: "0",
                     fontWeight: 400,
+                }
+            ],
+            "xs": [
+                "1.2rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 300,
+                }
+            ],
+            "2xs": [
+                "1.0rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 300,
+                }
+            ],
+            "3xs": [
+                "0.8rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 300,
                 }
             ],
         },
