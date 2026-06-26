@@ -1,8 +1,8 @@
 import clsx from "clsx";
 
 interface Props {
-    size?: "small" | "medium" | "large";
-    variant?: "primary" | "outline";
+    size?: "small" | "medium" | "large" | "x-large";
+    variant?: "primary" | "outline" | "negative";
 }
 
 export const Spinner = ({size = "medium", variant = "primary"}: Props) => {
@@ -16,7 +16,10 @@ export const Spinner = ({size = "medium", variant = "primary"}: Props) => {
             sizeStyles = "w-9 h-9";
             break;
         case "large":
-            sizeStyles = "w-12 h-12";
+            sizeStyles = "w-15 h-15";
+            break;
+        case "x-large":
+            sizeStyles = "w-25 h-25";
             break;
     }
 
@@ -26,6 +29,9 @@ export const Spinner = ({size = "medium", variant = "primary"}: Props) => {
             break;
         case "outline":
             variantStyles = "text-white dark:text-black";
+            break;
+        case "negative":
+            variantStyles = "text-black dark:text-white";
             break;
     }
 
