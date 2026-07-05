@@ -1,14 +1,11 @@
 import "@/style/globals.css"
-import {Title} from "@/ui/components/title/title"
-import {Typography} from "@/ui/design-system/typography/typography";
-import {Navigation} from "@/ui/components/navigation/navigation";
-import {Footer} from "@/ui/components/navigation/footer";
+import {LandingPageContainer} from "@/modules/landing-page/landing-page.container";
 
 
 export default function Home() {
     return (
         <>
-            <Title name="Louis Morel" img="/louis.png"/>
+            <LandingPageContainer/>
         </>
     )
 }
