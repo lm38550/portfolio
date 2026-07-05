@@ -3,6 +3,7 @@ import {K2D} from 'next/font/google'
 import "@/style/globals.css";
 import {Navigation} from "@/ui/components/navigation/navigation";
 import {Footer} from "@/ui/components/navigation/footer";
+import {Breadcrumbs} from "@/ui/components/breadcrumbs/breadcrumbs";
 
 const k2d = K2D({
     subsets: ['latin'],
@@ -16,6 +17,8 @@ export const metadata: Metadata = {
     description: "Portfolio de Louis Morel - Étudiant en informatique",
 };
 
+const isDisplayBreadCrumbs : boolean = false;
+
 export default function RootLayout({
                                        children,
                                    }: Readonly<{
@@ -25,7 +28,8 @@ export default function RootLayout({
         <html lang="fr" className={k2d.variable}>
             <body className="antialiased">
                 <Navigation/>
-                    {children}
+                {isDisplayBreadCrumbs && <Breadcrumbs/>}
+                {children}
                 <Footer/>
             </body>
         </html>

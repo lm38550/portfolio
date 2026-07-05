@@ -1,5 +1,6 @@
 import React from "react";
 import clsx from "clsx";
+import { twMerge } from "tailwind-merge";
 
 interface Props {
     variant?:
@@ -67,22 +68,22 @@ export const Typography = ({
             variantStyle = "text-xs text-day dark:text-night";
             break;
         case "caption-lg":
-            variantStyle = "text-sm text-gray-600 dark:text-night-800";
+            variantStyle = "text-sm text-gray-600 dark:text-gray-300";
             break;
         case "caption-base":
-            variantStyle = "text-xs text-gray-600 dark:text-night-800";
+            variantStyle = "text-xs text-gray-600 dark:text-gray-300";
             break;
         case "caption-sm":
-            variantStyle = "text-2xs text-gray-600 dark:text-night-800";
+            variantStyle = "text-2xs text-gray-600 dark:text-gray-300";
             break;
         case "caption-xsm":
-            variantStyle = "text-3xs text-gray-600 dark:text-night-800";
+            variantStyle = "text-3xs text-gray-600 dark:text-gray-300";
             break;
     }
 
     return (
         <Component
-            className={clsx(
+            className={twMerge(
                 variantStyle,
                 className,
             )}
