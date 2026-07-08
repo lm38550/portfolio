@@ -1,17 +1,12 @@
 import "@/style/globals.css"
-import { Title } from "@/ui/components/title/title"
-import {Typography} from "@/ui/design-system/typography/typography";
+import {LandingPageContainer} from "@/modules/landing-page/landing-page.container";
+import {Breadcrumbs} from "@/ui/components/breadcrumbs/breadcrumbs";
 
 
 export default function Home() {
-  return (
-      <>
-          <Title title="Louis Morel" subtitle="Étudiant en informatique – Développement web & projets perso" />
-          <Title title="Tenzing Bernard" subtitle="Étudiant en DnMADE – Projets étduant & perso" />
-          <Typography variant="h1" component="h1">
-              Text
-          </Typography>
-
-      </>
-  )
+    return (
+        <>
+            <LandingPageContainer/>
+        </>
+    )
 }
