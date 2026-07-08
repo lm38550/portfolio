@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     description: "Portfolio de Louis Morel - Étudiant en informatique",
 };
 
-const isDisplayBreadCrumbs : boolean = false;
+const isDisplayBreadCrumbs : boolean = true;
 
 export default function RootLayout({
                                        children,

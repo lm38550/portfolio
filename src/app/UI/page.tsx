@@ -9,6 +9,7 @@ import {Container} from "@/ui/components/container/container";
 import {Typography} from "@/ui/design-system/typography/typography";
 import {FooterVideo} from "@/ui/components/navigation/footer-video";
 import {Breadcrumbs} from "@/ui/components/breadcrumbs/breadcrumbs";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -174,7 +175,7 @@ export default function Home() {
 
                 {/*---- OTHER ----*/}
 
-                <div className="p-5 border-day-300 dark:border-night-300">
+                <div className="p-5 border-b-2 border-day-300 dark:border-night-300">
                     <Typography variant="caption-sm" className="p-3 font-bold">Others</Typography>
                     <div className="flex">
                         <div className="flex-col w-[50%]">
@@ -214,11 +215,20 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    {/*<div className="p-5 space-y-2 border-2 border-day-300 dark:border-night-300">*/}
-                    {/*    <Typography variant="caption-sm">Breadcrumbs</Typography>*/}
-                    {/*    <Breadcrumbs/>*/}
-                    {/*</div>*/}
                 </div>
+
+
+                {/*---- Pages Modèles----*/}
+
+                <div className="p-5 border-day-300 dark:border-night-300">
+                    <Typography variant="caption-sm" className="p-3 font-bold">Pages Modèles</Typography>
+                    <div className="flex flex-col gap-1">
+                        <Link href="/formation/login">Connexion</Link>
+                        <Link href="/formation/signup">Incription</Link>
+                        <Link href="/formation/forgot-password">Mot de passe oublié</Link>
+                    </div>
+                </div>
+
             </Container>
             <FooterVideo/>
             <br/>

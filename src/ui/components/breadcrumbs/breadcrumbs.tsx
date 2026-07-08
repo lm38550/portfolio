@@ -37,7 +37,7 @@ export const Breadcrumbs = () => {
     ))
 
     return (
-        <Container className="flex items-center gap-2 py-2">
+        <Container className="flex items-center gap-2 py-7">
             {view}
         </Container>
     )
