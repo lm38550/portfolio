@@ -18,6 +18,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
+            q
             incus exec PrePortfolio -- bash
             cd portfolio
             git checkout pre-dev
