@@ -1,0 +1,23 @@
+name: Deploy Next.js predev
+
+on:
+  push:
+    branches:
+      - pre-dev
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy on TrueNAS
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+
+          script: |
+            echo "Déploiement de la branche predev"
+            hostname
+            whoami
