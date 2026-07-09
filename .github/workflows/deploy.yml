@@ -18,11 +18,11 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
-            q
-            incus exec PrePortfolio -- bash
-            cd portfolio
-            git checkout pre-dev
-            git pull
-            npm install
-            npm run build
-            pm2 restart PrePortfolio
+            incus exec PrePortfolio -- bash -c '
+              cd portfolio
+              git checkout pre-dev
+              git pull
+              npm install
+              npm run build
+              pm2 restart PrePortfolio
+            '
