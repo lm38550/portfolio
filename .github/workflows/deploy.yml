@@ -18,6 +18,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
-            echo "Déploiement de la branche predev"
-            hostname
-            whoami
+            incus exec PrePortfolio -- bash
+            cd portfolio
+            git checkout pre-dev
+            git pull
+            npm install
+            npm run build
+            pm2 restart PrePortfolio
