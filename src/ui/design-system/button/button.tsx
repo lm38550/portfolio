@@ -19,6 +19,8 @@ interface Props {
     baseUrl?: string;
     linkType?: LinkType;
     action?: Function;
+    type?: "button" | "submit";
+    fullWidth?: boolean;
 }
 
 export const Button = ({
@@ -33,6 +35,8 @@ export const Button = ({
                            className,
                            baseUrl,
                            linkType = "internal",
+                           type = "button",
+                           fullWidth = false,
                            action = () => {
                            },
                        }: Props) => {
@@ -106,7 +110,7 @@ export const Button = ({
                 {icon && variant === "ico" ?
                     React.cloneElement(icon, {size: icoSize}
                     ) : (
-                        <div className={clsx("flex items-center gap-1")}>
+                        <div className={clsx("flex items-center justify-center gap-1")}>
                             {icon && iconPosition === "left" && (
                                 React.cloneElement(icon, {size: icoSize})
                             )}
@@ -127,10 +131,10 @@ export const Button = ({
 
     const element =
         <button
-            type="button"
-            className={clsx(variantStyles, sizeStyles, className, isLoading && "cursor-wait", "relative animate")}
+            type={type}
+            className={clsx(variantStyles, sizeStyles, className, isLoading && "cursor-wait", fullWidth && "w-full justify-center", "relative animate")}
             onClick={handleClick}
-            disabled={disabled}
+            disabled={!!(disabled || isLoading)}
         >
             {content}
         </button>

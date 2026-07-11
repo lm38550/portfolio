@@ -14,8 +14,6 @@ export const Breadcrumbs = () => {
     const lastSegment = segments[segments.length - 1];
     segments[0] = "accueil";
 
-    console.log(lastSegment);
-
     const view = segments.map((segment, index) => (
         <div key={uuidv4()} className="flex items-center">
             {segment !== "accueil" && (

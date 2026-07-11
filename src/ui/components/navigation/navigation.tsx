@@ -33,9 +33,6 @@ export const Navigation = ({}: Props) => {
                         <ActiveLink href="/contact">
                             CONTACT
                         </ActiveLink>
-                        <ActiveLink href="/UI">
-                            UI
-                        </ActiveLink>
                     </Typography>
                     <Button variant="ico" size="medium" iconTheme="primary" icon={<RiMoonLine/>}></Button>
                 </div>
