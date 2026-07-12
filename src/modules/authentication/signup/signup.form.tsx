@@ -11,7 +11,7 @@ export const SignupForm = ({form}: Props) => {
     const {onSubmit, errors, isLoading, register, handleSubmit} = form;
     console.log("form", form);
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="py-5 space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="py-3 space-y-4">
             <Input
                 isLoading={isLoading}
                 placeholder="E-mail"

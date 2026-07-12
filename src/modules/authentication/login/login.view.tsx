@@ -11,7 +11,7 @@ interface Props {
     form: FormsType;
 }
 
-export const LoginView = ({form} : Props) => {
+export const LoginView = ({form}: Props) => {
     return (
         <Container className="grid grid-cols-2 gap-20 my-10">
             <div className="flex items-center">
@@ -35,7 +35,12 @@ export const LoginView = ({form} : Props) => {
                             </Typography>
                         </div>
                     </div>
-                    <LoginForm form={form} />
+                    <LoginForm form={form}/>
+                    <Typography variant="caption-xsm" component="p" className="text-center">
+                        <Link href="/formation/forgot-password">
+                            Mot de passe perdu ?
+                        </Link>
+                    </Typography>
                 </Box>
             </div>
         </Container>
