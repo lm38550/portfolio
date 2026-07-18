@@ -1,0 +1,132 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        "./src/app/**/*.{ts,js,jsx,tsx}",
+        "./src/ui/**/*.{ts,js,jsx,tsx}",
+        "./src/components/**/*.{ts,js,jsx,tsx}",
+        "./src/**/*.{ts,js,jsx,tsx}",
+    ],
+    theme: {
+        borderRadius: {
+            DEFAULT : "10px",
+            full : "9999px",
+        },
+        extend: {
+            colors: {
+                night: {
+                    100: '#11131F',
+                    200: '#182449',
+                    300: '#253974',
+                    400: '#3A4F97',
+                    500: '#3E63DD',
+                    600: '#5472E4',
+                    DEFAULT: '#9EB1FF',
+                    750: '#BAC9FF',
+                    800: '#D6E1FF',
+                },
+                day: {
+                    100: '#FDFDFE',
+                    200: '#EDF2FE',
+                    300: '#D2DEFF',
+                    400: '#ABBDF9',
+                    500: '#3E63DD',
+                    600: '#3358D4',
+                    DEFAULT: '#3A5BC7',
+                    800: '#1F2D5C',
+                }
+            },
+        },
+        fontSize: {
+            "debug" : "200px",
+            "5xl": [
+                "6rem",
+                {
+                    lineHeight: "1.5em",
+                    letterSpacing: "0",
+                    fontWeight: 700,
+                }
+            ],
+            "4xl": [
+                "4rem",
+                {
+                    lineHeight: "1.1em",
+                    letterSpacing: "0",
+                    fontWeight: 700,
+                }
+            ],
+            "3xl": [
+                "3rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 700,
+                }
+            ],
+            "2xl": [
+                "2.2rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 700,
+                }
+            ],
+            "xl": [
+                "1.5rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 700,
+                }
+            ],
+            "lg": [
+                "2.3rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 400,
+                }
+            ],
+            "base": [
+                "1.9rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 400,
+                }
+            ],
+            "sm": [
+                "1.5rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 400,
+                }
+            ],
+            "xs": [
+                "1.2rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 300,
+                }
+            ],
+            "2xs": [
+                "1.0rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 300,
+                }
+            ],
+            "3xs": [
+                "0.8rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 300,
+                }
+            ],
+        },
+    },
+    plugins: [],
+}
