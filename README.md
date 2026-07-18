@@ -222,7 +222,7 @@ This website was made thanks to the following formation
 [issues-shield]: https://img.shields.io/github/issues/lm38550/portfolio.svg?style=for-the-badge
 [issues-url]: https://github.com/lm38550/portfolio/issues
 [license-shield]: https://img.shields.io/github/license/lm38550/portfolio.svg?style=for-the-badge
-[license-url]: https://github.com/lm38550/portfolio/blob/master/LICENSE.txt
+[license-url]: https://github.com/lm38550/portfolio/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/louis-morel-info69/
 [main-page-screenshot]: public/screenshots/main-page.png
