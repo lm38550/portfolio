@@ -5,8 +5,13 @@ import {Typography} from "@/ui/design-system/typography/typography";
 import Link from "next/link";
 import {SignupForm} from "@/modules/authentication/signup/signup.form";
 import {LoginForm} from "@/modules/authentication/login/login.form";
+import {FormsType} from "@/types/forms";
 
-export const LoginView = () => {
+interface Props {
+    form: FormsType;
+}
+
+export const LoginView = ({form}: Props) => {
     return (
         <Container className="grid grid-cols-2 gap-20 my-10">
             <div className="flex items-center">
@@ -30,7 +35,12 @@ export const LoginView = () => {
                             </Typography>
                         </div>
                     </div>
-                    <LoginForm />
+                    <LoginForm form={form}/>
+                    <Typography variant="caption-xsm" component="p" className="text-center">
+                        <Link href="/formation/forgot-password">
+                            Mot de passe perdu ?
+                        </Link>
+                    </Typography>
                 </Box>
             </div>
         </Container>

@@ -4,8 +4,13 @@ import {Box} from "@/ui/design-system/box/box";
 import {Typography} from "@/ui/design-system/typography/typography";
 import Link from "next/link";
 import {SignupForm} from "@/modules/authentication/signup/signup.form";
+import {FormsType} from "@/types/forms";
 
-export const SignupView = () => {
+interface Props {
+    form: FormsType;
+}
+
+export const SignupView = ({form} : Props) => {
     return (
         <Container className="grid grid-cols-2 gap-20 my-10">
             <div className="flex items-center">
@@ -29,7 +34,7 @@ export const SignupView = () => {
                             </Typography>
                         </div>
                     </div>
-                    <SignupForm />
+                    <SignupForm form={form} />
                 </Box>
             </div>
         </Container>

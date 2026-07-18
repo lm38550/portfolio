@@ -13,7 +13,6 @@ import Link from "next/link";
 
 
 export default function Home() {
-    console.log({Button, Spinner, Logo, Container});
     return (
         <>
             <Container>
