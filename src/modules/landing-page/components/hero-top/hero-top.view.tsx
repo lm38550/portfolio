@@ -4,7 +4,7 @@ import {SocialNetworksButtons} from "@/ui/components/navigation/social-networks-
 
 export const HeroTopView = () => {
     return (
-        <main className="min-h-screen flex items-center justify-between">
+        <main className="min-h-screen flex items-center justify-between bg-day-100 dark:bg-night-100">
             <div className="flex flex-col items-start justify-center space-y-4 px-15">
                 <Typography variant="h1" component="h1">Louis Morel</Typography>
                 <div className="pl-10 pb-5">
