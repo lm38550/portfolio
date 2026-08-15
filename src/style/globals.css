@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @config "../../tailwind.config.js";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
     --background: theme(colors.day.100);
     --foreground: theme(colors.day.DEFAULT);
@@ -11,13 +13,6 @@
     --color-foreground: var(--foreground);
     --font-sans: var(--font-k2d), system-ui;
     --font-mono: var(--font-k2d), system-ui;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: theme(colors.night.100);
-        --foreground: theme(colors.night.DEFAULT);
-    }
 }
 
 body {
