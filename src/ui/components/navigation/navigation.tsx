@@ -45,7 +45,7 @@ export const Navigation = ({}: Props) => {
 
     return (
         <div className="bg-day-300 dark:bg-night-300">
-            <Container className="flex items-center justify-between py-1.5 gap-7">
+            <div className="w-full max-w-[90rem] mx-auto px-5 lg:px-10 flex items-center justify-between py-1.5 gap-7">
                 <Link href="/">
                     <div className="flex items-center py-3 gap-3">
                         <Logo size="small"/>
@@ -70,7 +70,7 @@ export const Navigation = ({}: Props) => {
 
                     <Button action={toggleTheme} variant="ico" size="medium" iconTheme="primary" icon={theme === 'light' ? <RiMoonLine/> : <RiSunLine/>} className="animate"></Button>
                 </div>
-            </Container>
+            </div>
         </div>
     )
 }
