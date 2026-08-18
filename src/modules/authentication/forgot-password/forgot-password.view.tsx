@@ -4,8 +4,13 @@ import {Box} from "@/ui/design-system/box/box";
 import {Typography} from "@/ui/design-system/typography/typography";
 import Link from "next/link";
 import {ForgotPasswordForm} from "@/modules/authentication/forgot-password/forgot-password.form";
+import {FormsType} from "@/types/forms";
 
-export const ForgotPasswordView = () => {
+interface Props {
+    form: FormsType;
+}
+
+export const ForgotPasswordView = ({form} : Props) => {
     return (
         <Container className="grid grid-cols-2 gap-20 my-10">
             <div className="flex items-center">
@@ -24,7 +29,7 @@ export const ForgotPasswordView = () => {
                             <Link href="/formation/login">Connexion</Link>
                         </Typography>
                     </div>
-                    <ForgotPasswordForm/>
+                    <ForgotPasswordForm form={form}/>
                 </Box>
             </div>
         </Container>

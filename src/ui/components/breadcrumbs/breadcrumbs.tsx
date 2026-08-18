@@ -14,8 +14,6 @@ export const Breadcrumbs = () => {
     const lastSegment = segments[segments.length - 1];
     segments[0] = "accueil";
 
-    console.log(lastSegment);
-
     const view = segments.map((segment, index) => (
         <div key={uuidv4()} className="flex items-center">
             {segment !== "accueil" && (
@@ -37,8 +35,8 @@ export const Breadcrumbs = () => {
     ))
 
     return (
-        <Container className="flex items-center gap-2 py-7">
+        <div className="w-full max-w-[90rem] mx-auto px-5 lg:px-10 flex items-center gap-2 py-7">
             {view}
-        </Container>
+        </div>
     )
 }

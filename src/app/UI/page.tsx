@@ -13,9 +13,8 @@ import Link from "next/link";
 
 
 export default function Home() {
-    console.log({Button, Spinner, Logo, Container});
     return (
-        <>
+        <div className="bg-day-100 dark:bg-night-100">
             <Container>
                 {/*---- TEXTES ----*/}
 
@@ -232,6 +231,6 @@ export default function Home() {
             </Container>
             <FooterVideo/>
             <br/>
-        </>
+        </div>
     )
 }
