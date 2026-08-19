@@ -13,11 +13,11 @@ import Link from "next/link";
 
 export const Projects = () => {
     const projectsList = ProjectList.map((project) => (
-        <div className="flex items-center border-2 rounded h-60 mt-5 p-2 gap-3 bg-day-200 dark:bg-night-200" key={uuidv4()}>
-            <div className="p-6 h-full w-100 relative rounded">
-                <Image src={project.imageUrl} alt={project.imageAlt} fill className="rounded"/>
+        <div className="items-center border-2 grid grid-cols-4 rounded h-60 mt-5 p-2 gap-3 bg-day-200 dark:bg-night-200" key={uuidv4()}>
+            <div className="h-full col-span-1 relative rounded">
+                <Image src={project.imageUrl} alt={project.imageAlt} fill className="rounded object-cover"/>
             </div>
-            <div className="flex items-start flex-col gap-3">
+            <div className="col-span-3 flex items-start flex-col gap-3">
                 <Typography variant="h3" component="h1">{project.title}</Typography>
                 <Typography variant="body-sm" component="p" className="ml-3">{project.description}</Typography>
                 <div className="flex items-center gap-2">

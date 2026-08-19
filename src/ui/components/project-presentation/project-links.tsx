@@ -12,5 +12,17 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
+    },
+    {
+        title: "Sythèse d'image - Mouvements d'un robot",
+        description: "Projet Universitaire réalisé en 2026, mettant en scène un robot. L'objectif était de faire l'animation de " +
+            "ce robot",
+        gitUrl: "https://github.com/lm38550/mif37_am",
+        pageUrl: "@/app/projects/MIF37-AM",
+        imageUrl: "/img/projects/MIF37-AM.png",
+        imageAlt: "Image de présentation du projet : Sythèse d'image - Mouvements d'un robot",
+        compatible_mac : true,
+        compatible_linux : true,
+        compatible_windows : true,
     }
 ]
