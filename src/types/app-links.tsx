@@ -1,4 +1,3 @@
-import {IconType} from "react-icons";
 import {LinkType} from "@/lib/link-type";
 
 export interface AppLinks {
