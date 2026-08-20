@@ -38,7 +38,7 @@ module.exports = {
         },
         fontSize: {
             "debug" : "200px",
-            "5xl": [
+            "6xl": [
                 "6rem",
                 {
                     lineHeight: "1.5em",
@@ -46,7 +46,7 @@ module.exports = {
                     fontWeight: 700,
                 }
             ],
-            "4xl": [
+            "5xl": [
                 "4rem",
                 {
                     lineHeight: "1.1em",
@@ -54,7 +54,7 @@ module.exports = {
                     fontWeight: 700,
                 }
             ],
-            "3xl": [
+            "4xl": [
                 "3rem",
                 {
                     lineHeight: "1em",
@@ -62,7 +62,7 @@ module.exports = {
                     fontWeight: 700,
                 }
             ],
-            "2xl": [
+            "3xl": [
                 "2.2rem",
                 {
                     lineHeight: "1em",
@@ -70,8 +70,16 @@ module.exports = {
                     fontWeight: 700,
                 }
             ],
-            "xl": [
+            "2xl": [
                 "1.5rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 700,
+                }
+            ],
+            "xl": [
+                "1.3rem",
                 {
                     lineHeight: "1em",
                     letterSpacing: "0",
@@ -120,6 +128,14 @@ module.exports = {
             ],
             "3xs": [
                 "0.8rem",
+                {
+                    lineHeight: "1em",
+                    letterSpacing: "0",
+                    fontWeight: 300,
+                }
+            ],
+            "4xs": [
+                "0.6rem",
                 {
                     lineHeight: "1em",
                     letterSpacing: "0",

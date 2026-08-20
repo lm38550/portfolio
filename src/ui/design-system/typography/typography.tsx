@@ -41,43 +41,43 @@ export const Typography = ({
 
     switch (variant) {
         case "h1":
-            variantStyle = "text-5xl text-day-800 dark:text-night-800";
+            variantStyle = "md:text-6xl text-5xl text-day-800 dark:text-night-800";
             break;
         case "h2":
-            variantStyle = "text-4xl text-day-800 dark:text-night-800";
+            variantStyle = "md:text-5xl text-4xl text-day-800 dark:text-night-800";
             break;
         case "h3":
-            variantStyle = "text-3xl text-day-800 dark:text-night-800";
+            variantStyle = "md:text-4xl text-3xl text-day-800 dark:text-night-800";
             break;
         case "h4":
-            variantStyle = "text-2xl text-day-800 dark:text-night-800";
+            variantStyle = "md:text-3xl text-2xl text-day-800 dark:text-night-800";
             break;
         case "h5":
-            variantStyle = "text-xl text-day-800 dark:text-night-800";
+            variantStyle = "md:text-2xl text-xl text-day-800 dark:text-night-800";
             break;
         case "body-xlg":
-            variantStyle = "text-lg text-day dark:text-night";
+            variantStyle = "md:text-lg text-base text-day dark:text-night";
             break;
         case "body-lg":
-            variantStyle = "text-base text-day dark:text-night";
+            variantStyle = "md:text-base text-sm text-day dark:text-night";
             break;
         case "body-base":
-            variantStyle = "text-sm text-day dark:text-night";
+            variantStyle = "md:text-sm text-xs text-day dark:text-night";
             break;
         case "body-sm":
-            variantStyle = "text-xs text-day dark:text-night";
+            variantStyle = "md:text-xs text-2xs text-day dark:text-night";
             break;
         case "caption-lg":
-            variantStyle = "text-sm text-gray-600 dark:text-gray-300";
+            variantStyle = "md:text-sm text-xs text-gray-600 dark:text-gray-300";
             break;
         case "caption-base":
-            variantStyle = "text-xs text-gray-600 dark:text-gray-300";
+            variantStyle = "md:text-xs text-2xs text-gray-600 dark:text-gray-300";
             break;
         case "caption-sm":
-            variantStyle = "text-2xs text-gray-600 dark:text-gray-300";
+            variantStyle = "md:text-2xs text-3xs text-gray-600 dark:text-gray-300";
             break;
         case "caption-xsm":
-            variantStyle = "text-3xs text-gray-600 dark:text-gray-300";
+            variantStyle = "md:text-3xs text-4xs text-gray-600 dark:text-gray-300";
             break;
     }
 

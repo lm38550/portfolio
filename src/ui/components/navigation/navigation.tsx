@@ -53,7 +53,7 @@ export const Navigation = ({}: Props) => {
                     </div>
                 </Link>
                 <div className="flex items-center py-3 gap-3">
-                    <Typography variant="h5" component="h5" className="flex items-center gap-3">
+                    <Typography variant="h5" component="p" className="flex items-center gap-3">
                         <ActiveLink href="/">
                             ACCUEIL
                         </ActiveLink>
