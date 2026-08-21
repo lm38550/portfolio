@@ -22,3 +22,12 @@ export interface ForgotPasswordFormFielsType {
     email: string;
     password: string;
 }
+
+export interface ContactFormFielsType {
+    name: string;
+    email: string;
+    number: string;
+    how_did_know: string;
+    object: string;
+    content: string;
+}
