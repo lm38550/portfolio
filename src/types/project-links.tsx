@@ -8,4 +8,5 @@ export interface ProjectLinks {
     compatible_linux : boolean;
     compatible_windows : boolean;
     compatible_mac : boolean;
+    tags : Array<string>;
 }

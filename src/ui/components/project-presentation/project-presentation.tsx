@@ -21,9 +21,17 @@ export const Projects = () => {
                 <Typography variant="h3" component="h1" className="text-center md:text-start">{project.title}</Typography>
                 <Typography variant="body-sm" component="p" className="text-center md:text-start md:ml-3">{project.description}</Typography>
                 <div className="flex items-center gap-2">
-                    {project.compatible_windows && <RiWindowsFill size={30} className="text-day-800 dark:text-night-800" />}
-                    {project.compatible_linux && <RiUbuntuFill size={30} className="text-day-800 dark:text-night-800" />}
-                    {project.compatible_mac && <RiAppleFill size={30} className="text-day-800 dark:text-night-800" />}
+                    <div className="flex border-r-2 border-day-800 dark:border-night-800 pr-1">
+                        {project.compatible_windows && <RiWindowsFill size={30} className="text-day-800 dark:text-night-800" />}
+                        {project.compatible_linux && <RiUbuntuFill size={30} className="text-day-800 dark:text-night-800" />}
+                        {project.compatible_mac && <RiAppleFill size={30} className="text-day-800 dark:text-night-800" />}
+                    </div>
+                    {project.tags.map((tag) => (
+                        <Typography variant="caption-sm" component="p"
+                                    className="bg-day-400 dark:bg-night-400 p-2 rounded">
+                            {tag}
+                        </Typography>
+                    ))}
                 </div>
                 <div className="flex items-center gap-2">
                     {/* TODO : Rétablir quand les pages seront crées

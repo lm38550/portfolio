@@ -12,6 +12,7 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
+        tags : ["C++", "GKit"]
     },
     {
         title: "Sythèse d'image - Mouvements d'un robot",
@@ -24,6 +25,7 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
+        tags : ["C++", "GKit"]
     },
     {
         title: "Sythèse d'image - Mouvements d'une créature soumise à des forces physiques",
@@ -36,6 +38,7 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
+        tags : ["C++", "GKit"]
     },
     {
         title: "?????",
@@ -47,6 +50,7 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
+        tags : ["C++", "GKit"]
     },
     {
         title: "?????",
@@ -58,5 +62,6 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
+        tags : ["C++", "GKit"]
     }
 ]
