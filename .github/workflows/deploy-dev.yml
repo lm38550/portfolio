@@ -24,5 +24,6 @@ jobs:
               git pull
               npm install
               npm run build
-              pm2 restart Portfolio
+              export RESEND_API_KEY= ${{ secrets.RESEND_API_KEY }}
+              pm2 restart Portfolio --update-env
             '
