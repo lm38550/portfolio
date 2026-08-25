@@ -4,6 +4,8 @@ import {ContactView} from "@/modules/contact/contact.view";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {useState} from "react";
 import {ContactFormFielsType} from "@/types/forms";
+import Link from "next/link";
+import {redirect} from "next/navigation";
 
 export const ContactContainer = () => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -11,7 +13,7 @@ export const ContactContainer = () => {
     const {handleSubmit, formState: {errors}, register, setError, reset,} = useForm<ContactFormFielsType>();
 
     const onSubmit = async (formData : SubmitHandler<any>) => {
-
+        setIsLoading(true);
         try {
             const res = await fetch('api/contact', {
                 method: 'POST',
@@ -25,6 +27,7 @@ export const ContactContainer = () => {
         }
 
         console.log('formData', formData)
+        redirect("/contact/confirm")
     }
 
     return (
