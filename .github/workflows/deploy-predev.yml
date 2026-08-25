@@ -24,9 +24,7 @@ jobs:
               git pull
               npm install
               npm run build
-              export RESEND_API_KEY=${{ secrets.RESEND_API_KEY }}
+              export RESEND_API_KEY="${{ secrets.RESEND_API_KEY }}"
               pm2 restart PrePortfolio --update-env
-            '
-            incus exec PrePortfolio -- bash -c '
               if [ -n "$RESEND_API_KEY" ]; then echo "RESEND_API_KEY présente"; else echo "RESEND_API_KEY absente"; fi
             '
