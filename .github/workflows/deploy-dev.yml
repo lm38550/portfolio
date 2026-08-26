@@ -21,8 +21,11 @@ jobs:
             incus exec Portfolio -- bash -c '
               cd portfolio
               git checkout main
+              git restore package-lock.json
               git pull
               npm install
               npm run build
-              pm2 restart Portfolio
+              export RESEND_API_KEY="${{ secrets.RESEND_API_KEY }}"
+              pm2 restart Portfolio --update-env
+              if [ -n "$RESEND_API_KEY" ]; then echo "RESEND_API_KEY présente"; else echo "RESEND_API_KEY absente"; fi
             '
