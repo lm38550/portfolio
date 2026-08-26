@@ -46,7 +46,7 @@ export const ProjectList : ProjectLinks[] = [
             "Logiciel de gestion de budget",
         gitUrl: "https://github.com/lm38550/BudgetManager",
         pageUrl: "@/app/projects/BudgetManager",
-        imageUrl: "",
+        imageUrl: "/img/projects/BudgetManager.png",
         imageAlt: "Image de présentation du projet : Budget Manager",
         compatible_mac : false,
         compatible_linux : false,
@@ -69,7 +69,7 @@ export const ProjectList : ProjectLinks[] = [
     {
         title: "Gestionnaire de CV",
         description: "Projet universitaire de développement et gestion de projet. Ce gestionnaire permet de trier des CV en fonction de différents critères et d'en calculer le score",
-        gitUrl: "https://github.com/lm38550/mif01_cv",
+        gitUrl: "https://github.com/lm38550/mif01-cv",
         pageUrl: "@/app/projects/MIF01_CV",
         imageUrl: "",
         imageAlt: "Image de présentation du projet : Gestionnaire de CV",
