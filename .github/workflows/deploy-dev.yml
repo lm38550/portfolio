@@ -21,6 +21,7 @@ jobs:
             incus exec Portfolio -- bash -c '
               cd portfolio
               git checkout main
+              git restore package-lock.json
               git pull
               npm install
               npm run build

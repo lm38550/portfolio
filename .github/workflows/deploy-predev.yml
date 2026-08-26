@@ -21,6 +21,7 @@ jobs:
             incus exec PrePortfolio -- bash -c '
               cd portfolio
               git checkout pre-dev
+              git restore package-lock.json
               git pull
               npm install
               npm run build
