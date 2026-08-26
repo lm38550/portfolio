@@ -110,7 +110,7 @@ export const Button = ({
                 {icon && variant === "ico" ?
                     React.cloneElement(icon, {size: icoSize}
                     ) : (
-                        <div className={clsx("flex items-center justify-center gap-1")}>
+                        <div className={clsx("flex items-center justify-center gap-2")}>
                             {icon && iconPosition === "left" && (
                                 React.cloneElement(icon, {size: icoSize})
                             )}
