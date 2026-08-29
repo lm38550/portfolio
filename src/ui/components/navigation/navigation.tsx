@@ -45,15 +45,15 @@ export const Navigation = ({}: Props) => {
 
     return (
         <div className="bg-day-300 dark:bg-night-300">
-            <div className="w-full max-w-[90rem] mx-auto px-5 lg:px-10 flex items-center justify-between py-1.5 gap-7">
+            <div className="w-full max-w-[90rem] mx-auto px-5 lg:px-10 flex flex-col md:flex-row items-center sm:md:justify-between py-1.5">
                 <Link href="/">
                     <div className="flex items-center py-3 gap-3">
                         <Logo size="small"/>
-                        <Typography variant="h3" component="h3">Louis Morel</Typography>
+                        <Typography variant="h3" component="h3" className="whitespace-nowrap">Louis Morel</Typography>
                     </div>
                 </Link>
                 <div className="flex items-center py-3 gap-3">
-                    <Typography variant="h5" component="p" className="flex items-center gap-3">
+                    <Typography variant="h5" component="p" className="flex items-center gap-3 whitespace-nowrap">
                         <ActiveLink href="/">
                             ACCUEIL
                         </ActiveLink>

@@ -9,7 +9,7 @@ import {Container} from "@/ui/components/container/container";
 import Link from "next/link";
 
 export const Breadcrumbs = () => {
-    const asPath = usePathname();
+    const asPath = usePathname() ?? "";
     const segments = asPath.split("/");
     const lastSegment = segments[segments.length - 1];
     segments[0] = "accueil";
