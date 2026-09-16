@@ -13,7 +13,8 @@ import Link from "next/link";
 
 export const Projects = () => {
     const projectsList = ProjectList.map((project) => (
-        <div className="items-center border-2 grid grid-cols-1 md:grid-cols-4 rounded min-h-60 mt-5 p-2 md:gap-3 bg-day-200 dark:bg-night-200" key={uuidv4()}>
+        <div className="items-center border-2 grid grid-cols-1 md:grid-cols-4 rounded min-h-60 mt-5 p-2 w-full md:gap-3 bg-day-200 dark:bg-night-200
+                        hover:shadow-2xl hover:scale-102 animate" key={uuidv4()}>
             <div className="h-full min-h-40 w-full md:col-span-1 relative rounded">
                 {project.imageUrl === "" ?
                     <Image src="/img/no-image.png" alt="Image indiquant qu'il n'y a pas d'image pour ce projet" fill className="rounded object-cover"/>
@@ -45,11 +46,9 @@ export const Projects = () => {
                             Plus d'informations
                         </Button>
                     </Link>*/}
-                    <Link href={project.gitUrl}>
-                        <Button variant="secondary" iconPosition="right" icon={<RiGithubFill/>}>
-                            Projet GitHub
-                        </Button>
-                    </Link>
+                    <Button variant="secondary" iconPosition="right" icon={<RiGithubFill/>} linkType="external" baseUrl={project.gitUrl}>
+                        Projet GitHub
+                    </Button>
                 </div>
             </div>
         </div>
