@@ -12,7 +12,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["C++", "GKit"]
+        tags : ["C++", "GKit"],
+        isMain : true
     },
     {
         title: "Floutage de l'arrière plan en temps réel",
@@ -25,7 +26,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["Python", "OpenCV"]
+        tags : ["Python", "OpenCV"],
+        isMain : true
     },
     {
         title: "Simulation de tissu jacquard",
@@ -39,7 +41,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["JavaScript", "VueJS"]
+        tags : ["JavaScript", "VueJS"],
+        isMain : true
     },
     {
         title: "Sythèse d'image - Mouvements d'un robot",
@@ -52,7 +55,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["C++", "GKit"]
+        tags : ["C++", "GKit"],
+        isMain : true
     },
     {
         title: "Synthèse d'image - Parametrisation d'un mesh",
@@ -65,7 +69,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["C++", "GKit3"]
+        tags : ["C++", "GKit3"],
+        isMain : true
     },
     {
         title: "L'Incroyable Fermier Assassin Partant Checher Des Abricots (LIFAPCDA)",
@@ -78,7 +83,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["C++", "SDL2"]
+        tags : ["C++", "SDL2"],
+        isMain : true
     },
     {
         title: "Sythèse d'image - Mouvements d'une créature soumise à des forces physiques",
@@ -91,7 +97,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["C++", "GKit"]
+        tags : ["C++", "GKit"],
+        isMain : true
     },
     {
         title: "Budget Manager",
@@ -104,7 +111,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : false,
         compatible_linux : false,
         compatible_windows : true,
-        tags : ["Pyhton", "SQLlite", "C++", "WxWidget"]
+        tags : ["Pyhton", "SQLlite", "C++", "WxWidget"],
+        isMain : false
     },
     {
         title: "Gestionnaire de CV",
@@ -116,7 +124,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["Java", "Maven"]
+        tags : ["Java", "Maven"],
+        isMain : false
     },
     {
         title: "Gestionnaire de commande d'une pizzeria",
@@ -130,7 +139,8 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["Java", "Maven", "Tomcat", "Spring"]
+        tags : ["Java", "Maven", "Tomcat", "Spring"],
+        isMain : false
     },
     {
         title: "Analyse d'image",
@@ -143,6 +153,7 @@ export const ProjectList : ProjectLinks[] = [
         compatible_mac : true,
         compatible_linux : true,
         compatible_windows : true,
-        tags : ["C++", "OpenCV"]
+        tags : ["C++", "OpenCV"],
+        isMain : true
     },
 ]

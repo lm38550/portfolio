@@ -45,11 +45,9 @@ export const Projects = () => {
                             Plus d'informations
                         </Button>
                     </Link>*/}
-                    <Link href={project.gitUrl}>
-                        <Button variant="secondary" iconPosition="right" icon={<RiGithubFill/>}>
-                            Projet GitHub
-                        </Button>
-                    </Link>
+                    <Button variant="secondary" iconPosition="right" icon={<RiGithubFill/>} linkType="external" baseUrl={project.gitUrl}>
+                        Projet GitHub
+                    </Button>
                 </div>
             </div>
         </div>
