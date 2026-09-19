@@ -18,6 +18,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
+            incus project switch default
             incus exec Portfolio -- bash -c '
               cd portfolio
               git checkout main
