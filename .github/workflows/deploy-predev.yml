@@ -18,7 +18,8 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
           script: |
-            incus exec --project default PrePortfolio -- bash -c '
+            incus project switch default
+            incus exec PrePortfolio -- bash -c '
               cd portfolio
               git checkout pre-dev
               git restore package-lock.json
