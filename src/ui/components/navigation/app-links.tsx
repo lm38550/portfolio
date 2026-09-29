@@ -83,7 +83,7 @@ export const footerSocialList : AppLinks[] = [
     },
     {
         label: "GitHub",
-        baseUrl: "https://forge.univ-lyon1.fr/p2100444/",
+        baseUrl: "https://github.com/lm38550",
         type: "external",
         icon: <RiGithubFill/>
     },

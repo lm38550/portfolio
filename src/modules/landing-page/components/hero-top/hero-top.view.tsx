@@ -4,12 +4,12 @@ import {SocialNetworksButtons} from "@/ui/components/navigation/social-networks-
 
 export const HeroTopView = () => {
     return (
-        <main className="min-h-screen flex items-center justify-between">
+        <main className="min-h-screen flex items-center justify-between bg-day-100 dark:bg-night-100">
             <div className="flex flex-col items-start justify-center space-y-4 px-15">
                 <Typography variant="h1" component="h1">Louis Morel</Typography>
                 <div className="pl-10 pb-5">
-                    <Typography variant="body-lg" component="h2">Étudiant en informatique</Typography>
-                    <Typography variant="body-lg" component="h2">Développement web & projets perso</Typography>
+                    <Typography variant="body-lg" component="h2">Étudiant en informatique graphique</Typography>
+                    <Typography variant="body-lg" component="h2">Développement 2D/3D, développement logiciel & projets personels</Typography>
                 </div>
                 <SocialNetworksButtons/>
             </div>

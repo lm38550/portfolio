@@ -12,7 +12,7 @@ export const FooterVideo = () => {
 
     return (
         <div className="bg-day-300 dark:bg-night-300">
-            <Container className="flex justify-between pt-18">
+            <div className=" w-full max-w-[90rem] mx-auto px-5 lg:px-10 flex justify-between pt-18">
                 <div className="flex flex-col items-center gap-1">
                     <Typography variant="body-base">
                         Formations Gratuites
@@ -26,8 +26,8 @@ export const FooterVideo = () => {
                 </div>
                 <div className="">
                 </div>
-            </Container>
-            <Container className="bg-day-300 dark:bg-night-300 pt-9 pb-11 space-y-11">
+            </div>
+            <div className="w-full max-w-[90rem] mx-auto px-5 lg:px-10 bg-day-300 dark:bg-night-300 pt-9 pb-11 space-y-11">
                 <hr className="dark:bg-night-400" />
                 <div className="flex items-center justify-between">
                     <Typography variant="caption-xsm">
@@ -36,7 +36,7 @@ export const FooterVideo = () => {
                     <div className=""></div>
                 </div>
 
-            </Container>
+            </div>
         </div>
     )
 }

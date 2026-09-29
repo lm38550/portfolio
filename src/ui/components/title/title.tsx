@@ -12,8 +12,8 @@ export const Title = ({ name, img }: Props) => {
             <div className="flex flex-col items-start justify-center space-y-4 px-20">
                 <Typography variant="h1" component="h1">{name}</Typography>
                 <div className="px-10">
-                    <Typography variant="body-lg" component="h2">Étudiant en informatique</Typography>
-                    <Typography variant="body-lg" component="h2">Développement web & projets perso</Typography>
+                    <Typography variant="body-lg" component="h2">Étudiant en informatique graphique</Typography>
+                    <Typography variant="body-lg" component="h2">Développement 2D/3D, & projets perso</Typography>
                 </div>
             </div>
             <div className="flex justify-end relative w-[600px] h-[600px]">

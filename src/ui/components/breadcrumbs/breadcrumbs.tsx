@@ -9,7 +9,7 @@ import {Container} from "@/ui/components/container/container";
 import Link from "next/link";
 
 export const Breadcrumbs = () => {
-    const asPath = usePathname();
+    const asPath = usePathname() ?? "";
     const segments = asPath.split("/");
     const lastSegment = segments[segments.length - 1];
     segments[0] = "accueil";
@@ -35,8 +35,8 @@ export const Breadcrumbs = () => {
     ))
 
     return (
-        <Container className="flex items-center gap-2 py-7">
+        <div className="w-full max-w-[90rem] mx-auto px-5 lg:px-10 flex items-center gap-2 py-7">
             {view}
-        </Container>
+        </div>
     )
 }

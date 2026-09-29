@@ -1,14 +1,5 @@
 <!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a id="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -42,10 +33,10 @@
 
 <div>
   <p>
-    <a href="[https://louismorel.dev](https://github.com/lm38550/portfolio/blob/main/README_FR.md)">:flag_fr: - Version française</a>
+    <a href="https://github.com/lm38550/portfolio/blob/main/README_FR.md">🇫🇷 - Version française</a>
   </p>
   <p>
-    <a href="[https://louismorel.dev](https://github.com/lm38550/portfolio/blob/main/README.md)">:flag_en: - English version</a>
+    <a href="https://github.com/lm38550/portfolio/blob/main/README.md">🇬🇧 - English version</a>
   </p>
 </div>
 <br/>
@@ -231,7 +222,7 @@ This website was made thanks to the following formation
 [issues-shield]: https://img.shields.io/github/issues/lm38550/portfolio.svg?style=for-the-badge
 [issues-url]: https://github.com/lm38550/portfolio/issues
 [license-shield]: https://img.shields.io/github/license/lm38550/portfolio.svg?style=for-the-badge
-[license-url]: https://github.com/lm38550/portfolio/blob/master/LICENSE.txt
+[license-url]: https://github.com/lm38550/portfolio/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/louis-morel-info69/
 [main-page-screenshot]: public/screenshots/main-page.png
