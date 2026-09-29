@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <div className="flex items-center gap-2 bg-day-100 dark:bg-night-100">
             <Container className="flex flex-col items-center">
-                <Typography variant="h1" component="h1" className="text-center">
+                <Typography variant="h1" component="h1" className="text-center py-8">
                     Mes Projets
                 </Typography>
                 <Projects/>
