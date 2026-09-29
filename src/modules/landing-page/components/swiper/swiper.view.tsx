@@ -24,7 +24,7 @@ export const SwiperView = () => {
     const projects = ProjectList.filter((project) => project.isMain);
 
     return (
-        <div className="relative flex min-h-190 flex-col items-center justify-between bg-day-100 dark:bg-night-100">
+        <div className="relative flex min-h-190 w-screen overflow-clip flex-col items-center justify-between bg-day-100 dark:bg-night-100">
 
             <Typography variant="h2">Mes projets</Typography>
 

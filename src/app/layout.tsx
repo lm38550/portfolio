@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="fr" className={k2d.variable}>
-            <body className="antialiased">
+            <body className="antialiased overscroll-none">
                 <Navigation/>
                 {isDisplayBreadCrumbs && <Breadcrumbs/>}
                 {children}
