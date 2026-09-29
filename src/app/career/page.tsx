@@ -4,15 +4,25 @@ import {StudiesList} from "@/modules/about/component/studies-list";
 import {ExperienceList} from "@/modules/about/component/experiences-list";
 
 
-import { motion } from "framer-motion";
+import {motion, number} from "framer-motion";
 import {BriefcaseBusiness, GraduationCap, MapPin, CalendarDays} from "lucide-react";
 import {Typography} from "@/ui/design-system/typography/typography";
 
-const years =Array.from(
+let years =Array.from(
     new Set(
         StudiesList.map(item => item.end.getFullYear()).concat(
             ExperienceList.map(item => item.end.getFullYear())))
-).sort((a : number, b: number) => b - a).filter((year: number) => year > 0);
+    ).sort((a : number, b: number) => b - a);
+
+if (years.at(years.length-1) != undefined && years.at(years.length-1) != 0) {
+    let realYears = Array<number>();
+    let change : number = years.pop() as number;
+    realYears.push(change);
+    realYears = realYears.concat(years);
+    years = realYears;
+}
+
+
 
 function TimeLineCardStudie({item}: {item : Studies}) {
     return (
@@ -52,7 +62,11 @@ function TimeLineCardStudie({item}: {item : Studies}) {
                             </Typography>
                             <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
                                 <CalendarDays size={14} />
-                                {item.begin.getMonth() + "/" + item.begin.getFullYear() + " - " + item.end.getMonth() + "/" + item.end.getFullYear()}
+                                {(item.end.getFullYear() < 0) ?
+                                    "Depuis " + item.begin.getMonth() + "/" + item.begin.getFullYear()
+                                    :
+                                    item.begin.getMonth() + "/" + item.begin.getFullYear() + " - " + item.end.getMonth() + "/" + item.end.getFullYear()
+                                }
                             </Typography>
                         </div>
 
@@ -105,7 +119,11 @@ function TimeLineCardExperience({item}: {item : Experiences}) {
                             </Typography>
                             <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
                                 <CalendarDays size={14} />
-                                {item.begin.getMonth() + "/" + item.begin.getFullYear() + " - " + item.end.getMonth() + "/" + item.end.getFullYear()}
+                                {(item.end.getFullYear() < 0) ?
+                                    "Depuis " + item.begin.getMonth() + "/" + item.begin.getFullYear()
+                                    :
+                                    item.begin.getMonth() + "/" + item.begin.getFullYear() + " - " + item.end.getMonth() + "/" + item.end.getFullYear()
+                                }
                             </Typography>
                         </div>
 
@@ -133,10 +151,10 @@ export default function Home() {
                     whileInView={{opacity: 1, y: 0}}
                     viewport={{once: true}}
                     transition={{duration: 0.5}}
-                    className="mx-auto mb-20 max-w-2xl text-center"
+                    className="mx-auto mb-20 text-center"
                 >
-                    <Typography variant="h2" component="h2">
-                        Études & Expériences
+                    <Typography variant="h1" component="h1">
+                        Mon parcours
                     </Typography>
                 </motion.div>
 
@@ -188,6 +206,7 @@ export default function Home() {
 
                     {/* Timeline */}
                     <div className="space-y-10">
+
                         {years.map((year) => {
                             const education = StudiesList.find(
                                 (item) => item.end.getFullYear() === year
@@ -197,10 +216,11 @@ export default function Home() {
                                 (item) => item.end.getFullYear() === year
                             );
 
+                            const isCurrent = year < 0;
                             return (
                                 <div
                                     key={year}
-                                    className="grid grid-cols-[1fr_120px_1fr] items-center gap-8"
+                                    className="grid grid-cols-[1fr_130px_1fr] items-center gap-8"
                                 >
                                     {/* LEFT — Education */}
                                     <div className="flex justify-end">
@@ -218,7 +238,11 @@ export default function Home() {
                                         <div className="relative z-10 flex h-12 min-w-[70px] items-center justify-center rounded-full
                                             border border-day-300 dark:border-night-300 bg-day-100 dark:bg-night-100 px-4 shadow-sm">
                                             <Typography variant="body-base" component="p">
-                                                {year}
+                                                {isCurrent ? (
+                                                    "En cours"
+                                                    ) : (
+                                                    year
+                                                    )}
                                             </Typography>
                                         </div>
                                     </div>
