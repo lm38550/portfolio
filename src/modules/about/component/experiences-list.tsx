@@ -13,7 +13,7 @@ export const ExperienceList: Experiences[] = [
     },
     {
         title : "Stage en gestion de parc informatique",
-        place : "Crous de Lyon",
+        place : "Crous de Lyon à jean macé",
         begin : new Date(2025, 5, 25),
         end : new Date(2025, 8, 1),
         imageUrl : "",

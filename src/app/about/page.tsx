@@ -46,21 +46,20 @@ function TimeLineCardStudie({item}: {item : Studies}) {
 
                         {/* Place + period */}
                         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
-                            <span className="inline-flex items-center gap-1.5">
+                            <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
                                 <MapPin size={14} />
                                 {item.university}
-                            </span>
-                            <span className="text-slate-300">•</span>
-                            <span className="inline-flex items-center gap-1.5">
+                            </Typography>
+                            <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
                                 <CalendarDays size={14} />
                                 {item.begin.getMonth() + "/" + item.begin.getFullYear() + " - " + item.end.getMonth() + "/" + item.end.getFullYear()}
-                            </span>
+                            </Typography>
                         </div>
 
                         {/* Description */}
-                        <p className="mt-4 text-sm leading-6 text-slate-600">
+                        <Typography variant="body-base" component="p" className="mt-4">
                             {item.description}
-                        </p>
+                        </Typography>
                     </div>
                 </div>
             </div>
@@ -100,21 +99,20 @@ function TimeLineCardExperience({item}: {item : Experiences}) {
 
                         {/* Place + period */}
                         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
-                            <span className="inline-flex items-center gap-1.5">
+                            <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
                                 <MapPin size={14} />
                                 {item.place}
-                            </span>
-                            <span className="text-slate-300">•</span>
-                            <span className="inline-flex items-center gap-1.5">
+                            </Typography>
+                            <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
                                 <CalendarDays size={14} />
                                 {item.begin.getMonth() + "/" + item.begin.getFullYear() + " - " + item.end.getMonth() + "/" + item.end.getFullYear()}
-                            </span>
+                            </Typography>
                         </div>
 
                         {/* Description */}
-                        <p className="mt-4 text-sm leading-6 text-slate-600">
+                        <Typography variant="body-base" component="p" className="mt-4">
                             {item.description}
-                        </p>
+                        </Typography>
                     </div>
                 </div>
             </div>
