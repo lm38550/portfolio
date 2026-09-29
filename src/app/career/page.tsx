@@ -5,7 +5,7 @@ import {ExperienceList} from "@/modules/about/component/experiences-list";
 
 
 import {motion, number} from "framer-motion";
-import {BriefcaseBusiness, GraduationCap, MapPin, CalendarDays} from "lucide-react";
+import {RiSuitcaseLine, RiGraduationCapLine, RiMapPin2Line, RiCalendar2Line} from "react-icons/ri";
 import {Typography} from "@/ui/design-system/typography/typography";
 
 let years =Array.from(
@@ -35,17 +35,17 @@ function TimeLineCardStudie({item}: {item : Studies}) {
         >
             {/* Connector vers l'axe central */}
             <div className={`absolute top-1/2 hidden h-px w-10 -translate-y-1/2
-                bg-gradient-to- r blue-500 to-transparent lg:block -right-10`}
+                bg-gradient-to- r day-500 to-transparent lg:block -right-10`}
             />
 
             <div className={`group rounded border bg-day-100 dark:bg-night-100 p-6 shadow-sm
                 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl 
-                border-blue-100 dark:border-blue-950 hover:border-blue-200 dark:hover:border-blue-900`}
+                border-day-200 dark:border-night-200 hover:border-day-300 dark:hover:border-night-300`}
             >
                 <div className="flex items-start gap-4">
                     {/* Icon */}
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-day-200 dark:bg-night-200 text-blue-500">
-                        <GraduationCap size={24} strokeWidth={1.8} />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-day-200 dark:bg-night-200 text-day-500">
+                        <RiGraduationCapLine size={24}/>
                     </div>
 
                     <div className="min-w-0 flex-1">
@@ -57,11 +57,11 @@ function TimeLineCardStudie({item}: {item : Studies}) {
                         {/* Place + period */}
                         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
                             <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
-                                <MapPin size={14} />
+                                <RiMapPin2Line size={14} />
                                 {item.university}
                             </Typography>
                             <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
-                                <CalendarDays size={14} />
+                                <RiCalendar2Line size={14} />
                                 {(item.end.getFullYear() < 0) ?
                                     "Depuis " + item.begin.getMonth() + "/" + item.begin.getFullYear()
                                     :
@@ -92,17 +92,17 @@ function TimeLineCardExperience({item}: {item : Experiences}) {
         >
             {/* Connector vers l'axe central */}
             <div className={`absolute top-1/2 hidden h-px w-10 -translate-y-1/2
-                bg-gradient-to- r blue-500 to-transparent lg:block -right-10`}
+                bg-gradient-to- r day-500 to-transparent lg:block -right-10`}
             />
 
             <div className={`group rounded border bg-day-100 dark:bg-night-100 p-6 shadow-sm
                 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl 
-                border-violet-100 dark:border-violet-950 hover:border-violet-200 dark:hover:border-violet-900`}
+                border-day-200 dark:border-night-200 hover:border-day-300 dark:hover:border-night-300`}
             >
                 <div className="flex items-start gap-4">
                     {/* Icon */}
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-violet-50 dark:bg-violet-950 text-violet-500">
-                        <BriefcaseBusiness size={24} strokeWidth={1.8} />
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-day-200 dark:bg-night-200 text-day-500">
+                        <RiSuitcaseLine size={24}/>
                     </div>
 
                     <div className="min-w-0 flex-1">
@@ -114,11 +114,11 @@ function TimeLineCardExperience({item}: {item : Experiences}) {
                         {/* Place + period */}
                         <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
                             <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
-                                <MapPin size={14} />
+                                <RiMapPin2Line size={14} />
                                 {item.place}
                             </Typography>
                             <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
-                                <CalendarDays size={14} />
+                                <RiCalendar2Line size={14} />
                                 {(item.end.getFullYear() < 0) ?
                                     "Depuis " + item.begin.getMonth() + "/" + item.begin.getFullYear()
                                     :
@@ -171,7 +171,7 @@ export default function Home() {
                         {/* Education */}
                         <div className="flex items-center justify-end gap-4 pr-4">
                             <div className="text-right">
-                                <Typography variant="body-base" component="p" className="text-blue-500 dark:text-blue-500">
+                                <Typography variant="body-base" component="p" className="text-day-500 dark:text-day-500">
                                     Parcours académique
                                 </Typography>
                                 <Typography variant="h4" component="h4" className="mt-1">
@@ -179,8 +179,8 @@ export default function Home() {
                                 </Typography>
                             </div>
 
-                            <div className="flex h-14 w-14 items-center justify-center rounded bg-day-200 dark:bg-night-200 text-blue-500">
-                                <GraduationCap size={28} />
+                            <div className="flex h-14 w-14 items-center justify-center rounded bg-day-200 dark:bg-night-200 text-day-500">
+                                <RiGraduationCapLine size={28} />
                             </div>
                         </div>
 
@@ -189,12 +189,12 @@ export default function Home() {
 
                         {/* Experience */}
                         <div className="flex items-center gap-4 pl-4">
-                            <div className="flex h-14 w-14 items-center justify-center rounded bg-violet-50 dark:bg-violet-950 text-violet-500">
-                                <BriefcaseBusiness size={27} />
+                            <div className="flex h-14 w-14 items-center justify-center rounded bg-day-200 dark:bg-night-200 text-day-500">
+                                <RiSuitcaseLine size={27} />
                             </div>
 
                             <div>
-                                <Typography variant="body-base" component="p" className="text-violet-600 dark:text-violet-600">
+                                <Typography variant="body-base" component="p" className="text-day-600 dark:text-day-600">
                                     Parcours professionnel
                                 </Typography>
                                 <Typography variant="h4" component="h4" className="mt-1">
