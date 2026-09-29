@@ -60,8 +60,8 @@ export const Navigation = ({}: Props) => {
                         <ActiveLink href="/projects">
                             PROJETS
                         </ActiveLink>
-                        <ActiveLink href="/about">
-                            À PROPOS
+                        <ActiveLink href="/career">
+                            MON PARCOURS
                         </ActiveLink>
                         <ActiveLink href="/contact">
                             CONTACT
