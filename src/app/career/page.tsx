@@ -1,12 +1,14 @@
 "use client"
-import {Studies, Experiences} from "@/types/about";
-import {StudiesList} from "@/modules/about/component/studies-list";
-import {ExperienceList} from "@/modules/about/component/experiences-list";
+import {Studies, Experiences} from "@/types/career";
+import {StudiesList} from "@/modules/career/component/studies-list";
+import {ExperienceList} from "@/modules/career/component/experiences-list";
 
 
 import {motion, number} from "framer-motion";
 import {RiSuitcaseLine, RiGraduationCapLine, RiMapPin2Line, RiCalendar2Line} from "react-icons/ri";
 import {Typography} from "@/ui/design-system/typography/typography";
+import Image from "next/image";
+import {v4 as uuidv4} from 'uuid';
 
 let years =Array.from(
     new Set(
@@ -38,14 +40,18 @@ function TimeLineCardStudie({item}: {item : Studies}) {
                 bg-gradient-to- r day-500 to-transparent lg:block -right-10`}
             />
 
-            <div className={`group rounded border bg-day-100 dark:bg-night-100 p-6 shadow-sm
-                transition-all duration-300 hover:-translate-y-1 hover:shadow-xl 
+            <div className={`flex flex-col group rounded border bg-day-100 dark:bg-night-100 p-6 shadow-sm
+                transition-all duration-300 hover:-translate-y-1 hover:shadow-xl gap-4
                 border-day-200 dark:border-night-200 hover:border-day-300 dark:hover:border-night-300`}
             >
                 <div className="flex items-start gap-4">
                     {/* Icon */}
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-day-200 dark:bg-night-200 text-day-500">
-                        <RiGraduationCapLine size={24}/>
+                        {item.imageUrl == "" ? (
+                            <RiGraduationCapLine size={24}/>
+                        ) : (
+                            <Image src={item.imageUrl} alt={item.imageAlt} width={30} height={30}/>
+                        )}
                     </div>
 
                     <div className="min-w-0 flex-1">
@@ -55,13 +61,13 @@ function TimeLineCardStudie({item}: {item : Studies}) {
                         </Typography>
 
                         {/* Place + period */}
-                        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
-                            <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
-                                <RiMapPin2Line size={14} />
+                        <div className="mt-2 flex flex-col items-start gap-x-3 gap-y-1 text-sm text-slate-500">
+                            <Typography variant="caption-sm" component="span" className="inline-flex items-center gap-1">
+                                <RiMapPin2Line size={12} />
                                 {item.university}
                             </Typography>
-                            <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
-                                <RiCalendar2Line size={14} />
+                            <Typography variant="caption-sm" component="span" className="inline-flex items-center gap-1">
+                                <RiCalendar2Line size={12} className="mt-0.5"/>
                                 {(item.end.getFullYear() < 0) ?
                                     "Depuis " + item.begin.getMonth() + "/" + item.begin.getFullYear()
                                     :
@@ -71,10 +77,20 @@ function TimeLineCardStudie({item}: {item : Studies}) {
                         </div>
 
                         {/* Description */}
-                        <Typography variant="body-base" component="p" className="mt-4">
+                        <Typography variant="body-sm" component="p" className="mt-4 whitespace-pre-line">
                             {item.description}
                         </Typography>
                     </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                    {item.skills.map((item) => (
+                        <div key={uuidv4()} className="bg-day-200 dark:bg-night-200 rounded px-2.5 py-1.5">
+                            <Typography variant="caption-sm" component="p">
+                                {item}
+                            </Typography>
+                        </div>
+                    ))}
                 </div>
             </div>
         </motion.div>
@@ -95,14 +111,18 @@ function TimeLineCardExperience({item}: {item : Experiences}) {
                 bg-gradient-to- r day-500 to-transparent lg:block -right-10`}
             />
 
-            <div className={`group rounded border bg-day-100 dark:bg-night-100 p-6 shadow-sm
-                transition-all duration-300 hover:-translate-y-1 hover:shadow-xl 
+            <div className={`flex flex-col group rounded border bg-day-100 dark:bg-night-100 p-6 shadow-sm
+                transition-all duration-300 hover:-translate-y-1 hover:shadow-xl gap-4
                 border-day-200 dark:border-night-200 hover:border-day-300 dark:hover:border-night-300`}
             >
                 <div className="flex items-start gap-4">
                     {/* Icon */}
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded bg-day-200 dark:bg-night-200 text-day-500">
-                        <RiSuitcaseLine size={24}/>
+                        {item.imageUrl == "" ? (
+                            <RiSuitcaseLine size={24}/>
+                        ) : (
+                            <Image src={item.imageUrl} alt={item.imageAlt} width={30} height={30}/>
+                        )}
                     </div>
 
                     <div className="min-w-0 flex-1">
@@ -112,13 +132,13 @@ function TimeLineCardExperience({item}: {item : Experiences}) {
                         </Typography>
 
                         {/* Place + period */}
-                        <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-500">
-                            <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
-                                <RiMapPin2Line size={14} />
+                        <div className="mt-2 flex flex-col items-start gap-x-3 gap-y-1 text-sm text-slate-500">
+                            <Typography variant="caption-sm" component="span" className="inline-flex items-center gap-1">
+                                <RiMapPin2Line size={12}/>
                                 {item.place}
                             </Typography>
-                            <Typography variant="caption-base" component="span" className="inline-flex items-center gap-1.5">
-                                <RiCalendar2Line size={14} />
+                            <Typography variant="caption-sm" component="span" className="inline-flex items-center gap-1">
+                                <RiCalendar2Line size={12} className="mt-0.5"/>
                                 {(item.end.getFullYear() < 0) ?
                                     "Depuis " + item.begin.getMonth() + "/" + item.begin.getFullYear()
                                     :
@@ -128,10 +148,20 @@ function TimeLineCardExperience({item}: {item : Experiences}) {
                         </div>
 
                         {/* Description */}
-                        <Typography variant="body-base" component="p" className="mt-4">
+                        <Typography variant="body-sm" component="p" className="mt-4 whitespace-pre-line">
                             {item.description}
                         </Typography>
                     </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                    {item.skills.map((item) => (
+                        <div key={uuidv4()} className="bg-day-200 dark:bg-night-200 rounded px-2.5 py-1.5">
+                            <Typography variant="caption-sm" component="p">
+                                {item}
+                            </Typography>
+                        </div>
+                    ))}
                 </div>
             </div>
         </motion.div>
@@ -206,28 +236,35 @@ export default function Home() {
 
                     {/* Timeline */}
                     <div className="space-y-10">
-
                         {years.map((year) => {
-                            const education = StudiesList.find(
+                            // Récupérer toutes les études de cette année
+                            const education = StudiesList.filter(
                                 (item) => item.end.getFullYear() === year
                             );
 
+                            // Récupérer l'expérience professionnelle de cette année
                             const experience = ExperienceList.find(
                                 (item) => item.end.getFullYear() === year
                             );
 
                             const isCurrent = year < 0;
+
                             return (
                                 <div
                                     key={year}
-                                    className="grid grid-cols-[1fr_130px_1fr] items-center gap-8"
+                                    className="grid grid-cols-[1fr_130px_1fr] items-start gap-8"
                                 >
                                     {/* LEFT — Education */}
-                                    <div className="flex justify-end">
-                                        {education ? (
-                                            <div className="w-full max-w-xl">
-                                                <TimeLineCardStudie item={education} />
-                                            </div>
+                                    <div className="flex flex-col items-end gap-4">
+                                        {education.length > 0 ? (
+                                            education.map((study, index) => (
+                                                <div
+                                                    key={`${year}-study-${index}`}
+                                                    className="w-full max-w-xl"
+                                                >
+                                                    <TimeLineCardStudie item={study} />
+                                                </div>
+                                            ))
                                         ) : (
                                             <div className="h-1" />
                                         )}
@@ -235,14 +272,13 @@ export default function Home() {
 
                                     {/* CENTER — Year */}
                                     <div className="relative flex justify-center self-start">
-                                        <div className="relative z-10 flex h-12 min-w-[70px] items-center justify-center rounded-full
-                                            border border-day-300 dark:border-night-300 bg-day-100 dark:bg-night-100 px-4 shadow-sm">
+                                        <div
+                                            className="relative z-10 flex h-12 min-w-[70px] items-center justify-center rounded-full
+                        border border-day-300 dark:border-night-300
+                        bg-day-100 dark:bg-night-100 px-4 shadow-sm"
+                                        >
                                             <Typography variant="body-base" component="p">
-                                                {isCurrent ? (
-                                                    "En cours"
-                                                    ) : (
-                                                    year
-                                                    )}
+                                                {isCurrent ? "En cours" : year}
                                             </Typography>
                                         </div>
                                     </div>
