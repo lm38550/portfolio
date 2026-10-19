@@ -5,10 +5,11 @@ import {ExperienceList} from "@/modules/career/component/experiences-list";
 
 
 import {motion, number} from "framer-motion";
-import {RiSuitcaseLine, RiGraduationCapLine, RiMapPin2Line, RiCalendar2Line} from "react-icons/ri";
+import {RiSuitcaseLine, RiGraduationCapLine, RiMapPin2Line, RiCalendar2Line, RiDownloadLine} from "react-icons/ri";
 import {Typography} from "@/ui/design-system/typography/typography";
 import Image from "next/image";
 import {v4 as uuidv4} from 'uuid';
+import {Button} from "@/ui/design-system/button/button";
 
 let years =Array.from(
     new Set(
@@ -174,7 +175,7 @@ export default function Home() {
             id="parcours"
             className="relative overflow-hidden bg-day-100 dark:bg-night-100 py-14"
         >
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="flex flex-col mx-auto max-w-7xl px-6 lg:px-8 items-center">
                 {/* Header */}
                 <motion.div
                     initial={{opacity: 0, y: -20}}
@@ -243,7 +244,7 @@ export default function Home() {
                             );
 
                             // Récupérer l'expérience professionnelle de cette année
-                            const experience = ExperienceList.find(
+                            const experiences = ExperienceList.filter(
                                 (item) => item.end.getFullYear() === year
                             );
 
@@ -284,11 +285,16 @@ export default function Home() {
                                     </div>
 
                                     {/* RIGHT — Experience */}
-                                    <div>
-                                        {experience ? (
-                                            <div className="w-full max-w-xl">
-                                                <TimeLineCardExperience item={experience} />
-                                            </div>
+                                    <div className="flex flex-col gap-4">
+                                        {experiences.length > 0 ? (
+                                            experiences.map((experience, index) => (
+                                                <div
+                                                    key={`${year}-experience-${index}`}
+                                                    className="w-full max-w-xl"
+                                                >
+                                                    <TimeLineCardExperience item={experience} />
+                                                </div>
+                                            ))
                                         ) : (
                                             <div className="h-1" />
                                         )}
@@ -298,6 +304,16 @@ export default function Home() {
                         })}
                     </div>
                 </div>
+                <Button size="large" icon={<RiDownloadLine/>} iconPosition="left" className="mt-10" action={() => {
+                    const link = document.createElement("a");
+                    link.href = "/cv.pdf";
+                    link.download = "CV.pdf";
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }}>
+                    Télécharger mon CV
+                </Button>
             </div>
         </section>
     );
