@@ -6,6 +6,7 @@ import "swiper/css/navigation"
 
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Navigation, Pagination} from "swiper/modules";
+import type {Swiper as SwiperType} from "swiper";
 import {Typography} from "@/ui/design-system/typography/typography";
 import {Button} from "@/ui/design-system/button/button";
 import {
@@ -18,9 +19,12 @@ import {
 } from "react-icons/ri";
 import {v4 as uuidv4} from "uuid";
 import Image from "next/image";
+import {useState} from "react";
 import {ProjectList} from "@/ui/components/project-presentation/project-links";
 
 export const SwiperView = () => {
+    const [swiper, setSwiper] = useState<SwiperType | null>(null);
+
     const projects = ProjectList.filter((project) => project.isMain);
 
     return (
@@ -28,30 +32,30 @@ export const SwiperView = () => {
 
             <Typography variant="h2">Mes projets</Typography>
 
-            {/* Bottom buttons */}
             <div className="flex flex-row items-center gap-4 p-4">
-                    <Button
-                        icon={<RiArrowRightLongLine/>}
-                        size="large"
-                        baseUrl="/projects"
-                        linkType="internal"
-                    >
-                        Tous mes projets
-                    </Button>
+                <Button
+                    icon={<RiArrowRightLongLine/>}
+                    size="large"
+                    baseUrl="/projects"
+                    linkType="internal"
+                >
+                    Tous mes projets
+                </Button>
 
-                    <Button
-                        variant="secondary"
-                        icon={<RiGithubFill/>}
-                        size="large"
-                        baseUrl="https://github.com/lm38550"
-                        linkType="external"
-                    >
-                        Mon GitHub
-                    </Button>
-
+                <Button
+                    variant="secondary"
+                    icon={<RiGithubFill/>}
+                    size="large"
+                    baseUrl="https://github.com/lm38550"
+                    linkType="external"
+                >
+                    Mon GitHub
+                </Button>
             </div>
+
             <Swiper
                 modules={[Navigation, Pagination]}
+                onSwiper={setSwiper}
                 slidesPerView="auto"
                 spaceBetween={30}
                 centeredSlides={true}
@@ -78,14 +82,25 @@ export const SwiperView = () => {
                         spaceBetween: 40
                     }
                 }}
-                className="project-slider  w-full min-h-170 !overflow-visible"
+                className="project-slider w-full min-h-170 !overflow-visible"
             >
-                <div className="absolute inset-0 bg-gradient-to-r w-100 from-day-100 dark:from-night-100 via-transparent to-transparent z-20 pointer-events-none"></div>
-                <div className="absolute right-0 inset-y-0 bg-gradient-to-l w-100 from-day-100 dark:from-night-100 via-transparent to-transparent z-20 pointer-events-none"></div>
-                {projects.map((project) => (
+                <div
+                    className="absolute inset-0 z-20 w-100 bg-gradient-to-r from-day-100 via-transparent to-transparent dark:from-night-100 pointer-events-none"
+                />
+
+                <div
+                    className="absolute right-0 inset-y-0 z-20 w-100 bg-gradient-to-l from-day-100 via-transparent to-transparent dark:from-night-100 pointer-events-none"
+                />
+
+                {projects.map((project, index) => (
                     <SwiperSlide
                         key={uuidv4()}
-                        className="group !flex !w-auto py-6 transition-all duration-500 ease-out [&.swiper-slide-active]:z-10"
+                        onClick={() => {
+                            if (swiper) {
+                                swiper.slideToLoop(index);
+                            }
+                        }}
+                        className="group !flex !w-auto cursor-pointer py-6 transition-all duration-500 ease-out [&.swiper-slide-active]:z-10"
                     >
                         <div
                             className="
@@ -246,7 +261,6 @@ export const SwiperView = () => {
                     pt-5
                 "
             />
-
 
         </div>
     );
