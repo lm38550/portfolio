@@ -173,7 +173,7 @@ export default function Home() {
     return (
         <section
             id="parcours"
-            className="relative overflow-hidden bg-day-100 dark:bg-night-100 py-14"
+            className="relative overflow-hidden bg-day-100 dark:bg-night-100 py-14 pt-30"
         >
             <div className="flex flex-col mx-auto max-w-7xl px-6 lg:px-8 items-center">
                 {/* Header */}
