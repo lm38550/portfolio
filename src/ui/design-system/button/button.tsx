@@ -132,7 +132,7 @@ export const Button = ({
     const element =
         <button
             type={type}
-            className={clsx(variantStyles, sizeStyles, className, isLoading && "cursor-wait", fullWidth && "w-full justify-center", "relative animate")}
+            className={clsx(variantStyles, sizeStyles, className, isLoading ? "cursor-wait" : "cursor-pointer", fullWidth && "w-full justify-center", "relative animate")}
             onClick={handleClick}
             disabled={!!(disabled || isLoading)}
         >
