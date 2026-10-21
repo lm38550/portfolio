@@ -44,7 +44,7 @@ export const Navigation = ({}: Props) => {
     }, []);
 
     return (
-        <div className="bg-day-300 dark:bg-night-300">
+        <div className="bg-day-300 dark:bg-night-300 fixed w-full z-50">
             <div className="w-full max-w-[90rem] mx-auto px-5 lg:px-10 flex flex-col md:flex-row items-center sm:md:justify-between py-1.5">
                 <Link href="/">
                     <div className="flex items-center py-3 gap-3">

@@ -28,7 +28,7 @@ export const SwiperView = () => {
     const projects = ProjectList.filter((project) => project.isMain);
 
     return (
-        <div className="relative flex min-h-190 flex-col items-center justify-between bg-day-100 dark:bg-night-100">
+        <div className="relative flex min-h-190 w-full overflow-clip flex-col items-center justify-between bg-day-100 dark:bg-night-100">
 
             <Typography variant="h2">Mes projets</Typography>
 
@@ -72,9 +72,9 @@ export const SwiperView = () => {
                 pagination={{
                     el: ".project-slider-pagination",
                     type: "bullets",
-                    modifierClass: "slider-pagination",
-                    bulletClass: "slider-pagination__item",
-                    bulletActiveClass: "active",
+                    modifierClass: "swiper-pagination-",
+                    bulletClass: "!mx-1 !inline-block !h-2 !w-2 !rounded-full !bg-day-500 !opacity-50 !cursor-pointer",
+                    bulletActiveClass: "swiper-pagination-bullet-active !opacity-100 !bg-day-800",
                     clickable: true
                 }}
                 breakpoints={{
@@ -250,17 +250,31 @@ export const SwiperView = () => {
                 ))}
             </Swiper>
 
-            {/* Pagination */}
-            <div
-                className="
-                    project-slider-pagination
-                    flex
-                    items-center
-                    justify-center
-                    gap-2
-                    pt-5
-                "
-            />
+            {/* Pagination et navigation */}
+            <div className="flex items-center justify-center gap-4 pt-5 pb-6">
+                <button
+                    type="button"
+                    aria-label="Projet précédent"
+                    onClick={() => swiper?.slidePrev()}
+                    className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-day-200 dark:hover:bg-night-200"
+                >
+                    <RiArrowLeftLongLine size={24}/>
+                </button>
+
+                <div
+                    className="project-slider-pagination !static !w-auto items-center justify-center gap-1 pb-1.5"
+                    aria-label="Pagination des projets"
+                />
+
+                <button
+                    type="button"
+                    aria-label="Projet suivant"
+                    onClick={() => swiper?.slideNext()}
+                    className="flex h-10 w-10 items-center justify-center rounded-full transition-colors hover:bg-day-200 dark:hover:bg-night-200"
+                >
+                    <RiArrowRightLongLine size={24}/>
+                </button>
+            </div>
 
         </div>
     );
