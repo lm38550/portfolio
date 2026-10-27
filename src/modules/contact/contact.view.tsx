@@ -9,7 +9,7 @@ interface Props {
 
 export const ContactView = ({form}: Props) => {
     return (
-        <div className="bg-day-100 dark:bg-night-100 pt-30">
+        <div className="bg-day-100 dark:bg-night-100">
             <Container>
                 <Typography variant="h1" component="h1" className="text-center">Contact</Typography>
                 <ContactForm form={form} />

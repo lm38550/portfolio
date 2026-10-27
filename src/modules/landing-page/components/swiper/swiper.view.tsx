@@ -233,15 +233,29 @@ export const SwiperView = () => {
                                         group-[.swiper-slide-active]:pointer-events-auto
                                     "
                                 >
-                                    <Button
-                                        variant="secondary"
-                                        iconPosition="right"
-                                        icon={<RiGithubFill/>}
-                                        linkType="external"
-                                        baseUrl={project.gitUrl}
-                                    >
-                                        Projet GitHub
-                                    </Button>
+                                    {project.pageUrl != "" && (
+                                        <Button
+                                            variant="primary"
+                                            iconPosition="right"
+                                            icon={<RiArrowRightLongLine/>}
+                                            linkType="internal"
+                                            baseUrl={project.pageUrl}
+                                        >
+                                            Plus d'info
+                                        </Button>
+                                    )}
+
+                                    {project.gitUrl != "" && (
+                                        <Button
+                                            variant="secondary"
+                                            iconPosition="right"
+                                            icon={<RiGithubFill/>}
+                                            linkType="external"
+                                            baseUrl={project.gitUrl}
+                                        >
+                                            Projet GitHub
+                                        </Button>
+                                    )}
                                 </div>
 
                             </div>
