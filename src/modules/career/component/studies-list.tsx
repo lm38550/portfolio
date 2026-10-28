@@ -52,7 +52,7 @@ export const StudiesList: Studies[] = [
         university: "Universidad de Granada (Espagne)",
         begin: new Date(2023, 9, 1),
         end: new Date(2024, 9, 1),
-        imageUrl: "/img/schools/UGR-logo.png",
+        imageUrl: "/img/schools/UGR-Logo.png",
         imageAlt: "Logo de l'université de Granada (Espagne)",
         description:
             "Licence 3 en espagnol.\n" +

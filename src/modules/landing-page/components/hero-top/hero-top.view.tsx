@@ -29,7 +29,7 @@ export const HeroTopView = () => {
                 </Button>
             </div>
             <div className="flex justify-end relative w-[600px] h-[600px]">
-                <Image src="/img/louis.png" alt="profile" fill className="object-cover" loading="eager"/>
+                <Image src="/img/louis-v2.png" alt="profile" fill className="object-cover" loading="eager"/>
                 <div className="absolute inset-0 bg-gradient-to-t from-day-100 dark:from-night-100 via-transparent to-transparent"></div>
             </div>
         </main>
