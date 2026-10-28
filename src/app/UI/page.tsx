@@ -14,7 +14,7 @@ import Link from "next/link";
 
 export default function Home() {
     return (
-        <div className="bg-day-100 dark:bg-night-100 pt-30">
+        <div className="bg-day-100 dark:bg-night-100">
             <Container>
                 {/*---- TEXTES ----*/}
 
